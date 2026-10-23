@@ -1,0 +1,35 @@
+name: Publish AERONAUT game
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Download verified game release
+        run: |
+          curl --fail --location --retry 3 --output game.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.117/aeronaut-release84.tar.gz
+          echo "5085cd50cfc65388a8f6cd0c61438abeec03fea679c1c7768e12cb5ddb2b8f4a  game.tar.gz" | sha256sum --check
+          tar -xzf game.tar.gz
+          test -f dist/index.html
+          touch dist/.nojekyll
+      - name: Upload game
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - name: Publish game
+        id: deployment
+        uses: actions/deploy-pages@v4
