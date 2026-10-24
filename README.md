@@ -1,14 +1,14 @@
 # AERONAUT flight simulator
 
-[Play the game](https://hackyult.github.io/?v=120)
+[Play the game](https://hackyult.github.io/?v=121)
 
-Release `v0.1.120` fixes A380 wheel-well lining emerging through the passenger cabin during gear transit, fits wing lights to the supplied geometry and carries them with wing flex. Wind-relative runway airspeed, bank support/drag, ground effect and independent damped gust response extend the existing flight model. Cockpit pavement cues and wind-advected touchdown smoke improve takeoff/landing feedback.
+Release `v0.1.121` upgrades the shared terminal architecture system across 80 airport regions and 763 mapped footprints. Continuous curtain glazing, mullions, foundation plinths, bounded lounge furnishings, English wayfinding and a Lounge camera improve airport views. Source roofs and mapped outlines are retained. Model elevation follows the runway and graded apron datum instead of DEM roof spikes.
 
-Terrain skirts/lips and bounded low-frequency imagery colour correction reduce seams. Complete parent/detail coverage can start the game while slower high-resolution tiles continue loading. Visible city tiles remain until a complete staged replacement is ready. Eight aircraft were checked at 41 gear positions; 83 targeted checks pass after correction.
+Aircraft rotation contact uses a precomputed envelope from actual supplied tyre vertices, with smooth liftoff blending. Grounded aircraft no longer receive whole-model cosmetic shake that moves tyres through pavement. Eight deployed aircraft were checked at five rotation pitches; 43 targeted checks pass.
 
-The verified release archive is attached to the release. GitHub Actions checks its SHA-256 and publishes the static game through GitHub Pages. Release 119 factory liveries, aviation charts and airport data are retained. Individual redesigns of more than 50 terminals are not included in this exterior/dynamics-focused update.
+The verified release archive is attached to the release. GitHub Actions checks its SHA-256 and publishes the static game through GitHub Pages. Earlier aircraft, terrain, aviation-chart and dynamics repairs are retained.
 
-Flight dynamics and structural coefficients remain reduced-order game estimates, not certified aircraft performance or an embedded Microsoft engine. Exact real-world visual equivalence is not claimed. Satellite resolution and photographic colour still depend on the imagery provider. OpenFlightMaps coverage is regional; FAA charts cover the United States.
+Interiors, building heights and aircraft dynamics remain approximations. The shared architecture upgrade is not 80 individually surveyed airport replicas. Exact real-world equivalence is not claimed. Satellite resolution and photographic colour depend on the imagery provider. OpenFlightMaps coverage is regional; FAA charts cover the United States.
 
 Game and model source packages, attribution and restoration scripts are available under [/sources/](https://hackyult.github.io/sources/). Consult `ATTRIBUTION.md` for individual asset licences, including noncommercial restrictions.
 
