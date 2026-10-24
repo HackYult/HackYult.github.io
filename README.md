@@ -1,15 +1,17 @@
 # AERONAUT flight simulator
 
-[Play the latest game](https://hackyult.github.io/?v=129) · [Search the all-airport terrain report](https://hackyult.github.io/sources/release129/)
+[Play release 130](https://hackyult.github.io/?v=130) · Default route VNKT → ZULS.
 
-Release 129 audits all 1,095 selectable airports and 1,680 runways, sampling 1,331,655 stored runway/taxi/terminal locations. Actual zoom-12 DEM checks cover 5,040 runway endpoints/centres from 1,748 tiles; all were available.
+The permanent in-flight freeze is fixed: leaving all nearby airport coverage previously made ground-service UI dereference an undefined airport layout before scheduling the next frame. Ground services now handle empty coverage, and view exceptions cannot terminate subsequent frames.
 
-The grading priority that caused height conflicts at 258 airports is corrected. Secondary runway cores now match the physical collision datum, shoulders transition smoothly, terminal foundations remain protected, and automatic ground travel follows sampled graded terrain. The full after audit finds zero conflicts under the stored-surface criteria. This is not a visual or surveyed-flatness certification of every airport.
+A380 and 787 complete the Kathmandu–Lhasa takeoff-to-rollout regression with 169 actual approach DEM tiles, 100% progress, no crash and zero final speed. Unverified taxi exits remain manual after rollout. Arrival circuits now check forward terrain.
 
-Zhangjiajie ZGDY's incorrect airport reference of 2,599.944 m is corrected to the charted 217.2 m. Its flat game runway uses the threshold mean, 209.9 m. Persistent import overrides prevent the erroneous public database height returning. Source: [archived CAAC AIP chart copy](https://yinlei.org/x-plane10/doc/ZGDY.pdf).
+Terrain meshes are created incrementally, geographic rebasing releases stale worker ownership, and visible satellite refinements commit in cohorts. Cold shader compilation, network delays and GPU hitches are not claimed eliminated.
 
-65 regression checks passed. Remaining flags are explicit in the report: 100 airports have intersecting-runway source mean-height differences requiring slope/datum review; 725 lack complete mapped apron coverage. All rows distinguish stored-surface checks from independent visual review. No missing apron geometry or surveyed profiles are invented.
+The user-supplied 787 cockpit geometry is installed with four live main screens. Cockpit and Flight displays share state and rendering. Nine external PNGs were absent; neutral panel materials do not pretend to restore missing artwork.
 
-The prior clearance radar, takeoff acceleration boost, smooth landing response and short local tug pushback are retained. Earlier navigation/automatic taxi coverage limits remain documented in the bundled sources.
+All 1,095 airports / 1,680 runways were sampled again at 1,331,655 stored-surface points. 100 crossing-runway components share a flat game datum without overwriting source heights; 725 airports still lack complete apron mapping. This is not an independent visual survey or exact satellite-alignment certification.
 
-[Release details](https://github.com/HackYult/HackYult.github.io/releases/tag/v0.1.129) · [Sources / licences](https://hackyult.github.io/sources/). GitHub Actions checks the release archive SHA-256 before deployment.
+29 final focused checks passed; 39 earlier broad checks passed. Browser terrain/render continuity: 10%–95.01%, 2,907 frames, seven rebases, zero errors. [Validation and images](https://hackyult.github.io/sources/release130/) · [Per-airport audit](https://hackyult.github.io/sources/release129/).
+
+[Release details](https://github.com/HackYult/HackYult.github.io/releases/tag/v0.1.130) · [Sources / licences](https://hackyult.github.io/sources/). GitHub Actions verifies the archive SHA-256 before deployment.
