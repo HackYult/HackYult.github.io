@@ -1,15 +1,15 @@
 # AERONAUT flight simulator
 
-[Play the latest game](https://hackyult.github.io/?v=128)
+[Play the latest game](https://hackyult.github.io/?v=129) · [Search the all-airport terrain report](https://hackyult.github.io/sources/release129/)
 
-Release 128 grades Lhasa ZULS using 25 sourced hard-pavement polygons and the 28-vertex airport boundary from Gateway scenery 107849. The intervening airfield ground is flat at the game runway datum, with smooth transitions to surrounding DEM. Mapped taxi corridors have a wider flat core across airports. Source vertices approximate curved pavement edges; current surveyed slopes or satellite pixel alignment are not claimed.
+Release 129 audits all 1,095 selectable airports and 1,680 runways, sampling 1,331,655 stored runway/taxi/terminal locations. Actual zoom-12 DEM checks cover 5,040 runway endpoints/centres from 1,748 tiles; all were available.
 
-Full-power departure ground thrust increases 83%, blended with engine output and removed under wheel braking. Eight reference presets lift off 47–50% sooner. Ordinary taxi/airborne thrust and idle dry/wet stopping outcomes are retained. This is a requested gameplay acceleration boost, not certified performance.
+The grading priority that caused height conflicts at 258 airports is corrected. Secondary runway cores now match the physical collision datum, shoulders transition smoothly, terminal foundations remain protected, and automatic ground travel follows sampled graded terrain. The full after audit finds zero conflicts under the stored-surface criteria. This is not a visual or surveyed-flatness certification of every airport.
 
-Radar defaults to CLEARANCE, computed as aircraft MSL minus terrain MSL. Closer or higher terrain is darker, larger vertical separation lighter. Ten continuous colour anchors, minimum-separation readout, a clearance legend and terrain-above-aircraft hatching replace the prior default absolute-height palette. The one-second sweep, panel controls and optional absolute-elevation mode remain available.
+Zhangjiajie ZGDY's incorrect airport reference of 2,599.944 m is corrected to the charted 217.2 m. Its flat game runway uses the threshold mean, 209.9 m. Persistent import overrides prevent the erroneous public database height returning. Source: [archived CAAC AIP chart copy](https://yinlei.org/x-plane10/doc/ZGDY.pdf).
 
-102 focused and regression checks passed, with browser comparisons of actual Himalayan terrain at two aircraft altitudes. The previous release's smooth landing response and local short pushback remain available. [Validation](https://hackyult.github.io/sources/release128/validation.json).
+65 regression checks passed. Remaining flags are explicit in the report: 100 airports have intersecting-runway source mean-height differences requiring slope/datum review; 725 lack complete mapped apron coverage. All rows distinguish stored-surface checks from independent visual review. No missing apron geometry or surveyed profiles are invented.
 
-Source pavement: X-Plane Scenery Gateway 107849, atag5, approved 2025-08-22, GPL-2.0. Source and attribution are bundled. Earlier airport-wide coverage limits remain: only 57 automatic taxi connections are validated across 1,095 selectable airports. [Airport audit](https://hackyult.github.io/sources/release126/all-airports.json).
+The prior clearance radar, takeoff acceleration boost, smooth landing response and short local tug pushback are retained. Earlier navigation/automatic taxi coverage limits remain documented in the bundled sources.
 
-[Release details](https://github.com/HackYult/HackYult.github.io/releases/tag/v0.1.128) · [Sources / licences](https://hackyult.github.io/sources/). GitHub Actions checks the release archive SHA-256 before deployment.
+[Release details](https://github.com/HackYult/HackYult.github.io/releases/tag/v0.1.129) · [Sources / licences](https://hackyult.github.io/sources/). GitHub Actions checks the release archive SHA-256 before deployment.
