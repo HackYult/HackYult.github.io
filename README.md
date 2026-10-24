@@ -1,6 +1,8 @@
 # AERONAUT flight simulator
 
-[Play the latest game](https://hackyult.github.io/?v=122)
+[Play the latest game](https://hackyult.github.io/?v=123)
+
+Release 123 reduces wheel braking, reverse thrust and rolling resistance, giving about 33% longer dry landing rollout in the eight-aircraft reference scenarios. Parking-brake holding force is retained.
 
 Release 122 improves wide city night streaming with retained overlapping tiles, bounded look-ahead and gradual light transitions. Ground thrust now uses a force-based reference-load estimate; wind response, touchdown drift and dry/wet braking are more gradual. Tower radio can be manually minimized and remembers its state.
 
