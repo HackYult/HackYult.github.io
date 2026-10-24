@@ -1,15 +1,11 @@
 # AERONAUT flight simulator
 
-[Play the game](https://hackyult.github.io/?v=121)
+[Play the latest game](https://hackyult.github.io/?v=122)
 
-Release `v0.1.121` upgrades the shared terminal architecture system across 80 airport regions and 763 mapped footprints. Continuous curtain glazing, mullions, foundation plinths, bounded lounge furnishings, English wayfinding and a Lounge camera improve airport views. Source roofs and mapped outlines are retained. Model elevation follows the runway and graded apron datum instead of DEM roof spikes.
+Release 122 improves wide city night streaming with retained overlapping tiles, bounded look-ahead and gradual light transitions. Ground thrust now uses a force-based reference-load estimate; wind response, touchdown drift and dry/wet braking are more gradual. Tower radio can be manually minimized and remembers its state.
 
-Aircraft rotation contact uses a precomputed envelope from actual supplied tyre vertices, with smooth liftoff blending. Grounded aircraft no longer receive whole-model cosmetic shake that moves tyres through pavement. Eight deployed aircraft were checked at five rotation pitches; 43 targeted checks pass.
+The Global enroute reference adds 70,285 historical airway segments and 30,181 endpoint fixes. **It is archived cycle 2012.08, not current worldwide AIRAC or a complete current chart service.** Existing regional FAA/OpenFlightMaps and global OurAirports navaids remain available. Data is loaded on demand when opening/zooming the chart.
 
-The verified release archive is attached to the release. GitHub Actions checks its SHA-256 and publishes the static game through GitHub Pages. Earlier aircraft, terrain, aviation-chart and dynamics repairs are retained.
+51 targeted checks and eight aircraft reference takeoff/dry-wet rollout scenarios passed. These are game-model checks, not certified type performance. Aircraft mass/thrust calibration, weather presets and scenery remain approximations. Earlier terminal and aircraft repairs are retained.
 
-Interiors, building heights and aircraft dynamics remain approximations. The shared architecture upgrade is not 80 individually surveyed airport replicas. Exact real-world equivalence is not claimed. Satellite resolution and photographic colour depend on the imagery provider. OpenFlightMaps coverage is regional; FAA charts cover the United States.
-
-Game and model source packages, attribution and restoration scripts are available under [/sources/](https://hackyult.github.io/sources/). Consult `ATTRIBUTION.md` for individual asset licences, including noncommercial restrictions.
-
-No account credentials or private server are required to play. Public imagery and chart services require an internet connection.
+Game/model source, individual asset licences and navigation data attribution remain available through [Sources / licences](https://hackyult.github.io/sources/) and ATTRIBUTION.md. The verified release archive is deployed by GitHub Actions with a SHA-256 check.
