@@ -1,13 +1,15 @@
 # AERONAUT flight simulator
 
-[Play the latest game](https://hackyult.github.io/?v=126)
+[Play the latest game](https://hackyult.github.io/?v=127)
 
-Release 126 replaces generated traffic with a forward terrain-elevation display: one-second sweep, relative height colours, 200 m contours, 5/10/20 NM ranges and minimize/enlarge controls. It uses real DEM, not weather reflectivity or certified TAWS. All 1,024 coarse zoom-5 global terrain tiles are bundled (Web Mercator latitude limits); nearby finer elevations stream on demand. Missing/coarse data is labelled.
+Release 127 smooths touchdown onset and damped rebound, scales the cabin response with sink rate, and softens the wing touchdown impulse. Pavement vibration follows travelled distance and diminishes at taxi speed. These are estimated game suspension cues, not a certified aircraft model.
 
-HUD instruments are smaller, warnings have reserved space, tape digits cannot overlap fixed readouts, and cockpit/status/HUD IAS share one conversion. External aircraft reference and cockpit horizon use explicit attitude frames. Ground thrust acceleration is increased 41.8%, with the extra gain removed under wheel braking. Eight preset takeoff scenarios are 34–40% quicker; airborne thrust and idle dry/wet stopping distances are retained. This is a requested gameplay boost, not certified aircraft performance.
+The terrain display defaults to continuous sea-level elevation colours with contours and optional relative-height warning mode. Zoom-15 near-aircraft DEM shares the renderer's coordinate system and airport grading; finer pixel spacing does not guarantee native survey accuracy. The bundled coarse global fallback remains available. Missing data stays grey.
 
-60 targeted checks passed, with browser verification of real Himalayan DEM, radar controls, warnings and matching IAS readouts. The source/route audit checks all 1,095 selectable airports and 1,680 runways. 1,618 runway records match stored reference endpoints within 5 m; 62 remain unmatched. Only 57 automatic taxi connections are currently validated. Centreline queries at both public OSM endpoints repeatedly timed out. Exact routes at all airports and pixel-by-pixel satellite alignment are not claimed. [Full airport audit](https://hackyult.github.io/sources/release126/all-airports.json).
+Where no verified taxi route exists, a tug can approach, connect, push back 20–32 m, disconnect and leave the aircraft braked for manual taxi. Obstructed or uneven paths are rejected. Verified mapped extended tow routes are retained.
 
-Earlier preflight weather, factory paint, city night, airport terrain and taxi phraseology work is retained. The global enroute reference is archived cycle 2012.08, not current worldwide AIRAC; regional charts and global navaids remain available.
+89 focused checks passed, including eight aircraft across four pushback headings, touchdown/wing continuity, bounded radar requests and prior HUD, physics, ground-service and terrain regressions.
 
-[Release details](https://github.com/HackYult/HackYult.github.io/releases/tag/v0.1.126) · [Sources / licences](https://hackyult.github.io/sources/). GitHub Actions verifies the release archive by SHA-256 before deployment.
+The earlier audit covers all 1,095 selectable airports, but only 57 automatic taxi connections are validated. Missing centreline/stand coverage and unavailable public query services prevent exact automatic routes at every airport. Stored runway endpoint agreement does not establish satellite pixel alignment. [Airport audit](https://hackyult.github.io/sources/release126/all-airports.json).
+
+[Release details](https://github.com/HackYult/HackYult.github.io/releases/tag/v0.1.127) · [Sources / licences](https://hackyult.github.io/sources/). GitHub Actions checks the release archive SHA-256 before deployment.
