@@ -1,6 +1,8 @@
 # AERONAUT flight simulator
 
-[Play the latest game](https://hackyult.github.io/?v=124)
+Release 125 adds a reference green HUD with bottom alerts, six preflight weather/time sliders and estimated load-driven wing response for eight aircraft. Stowed spoilers remain locked; deployed panel compliance is bounded. Factory finishes apply automatically. 116 targeted checks passed and an A380 approach was verified in the browser. These are reduced-order game estimates, not manufacturer-validated physics.
+
+[Play the latest game](https://hackyult.github.io/?v=125)
 
 Release 124 fixes airport transition terrain work, source-aware imagery levels, Lhasa startup, mapped taxi pavement grading, separate taxi and takeoff clearances, runway side phraseology and six placeholder airport identifiers. Ground thrust is increased about 7% while the longer rollout from release 123 is retained. Systems default to a compact collapsed panel; all controls remain available.
 
@@ -10,4 +12,4 @@ The directory contains 1,153 records, including 1,095 with runway geometry. Imag
 
 Earlier city night streaming, minimized tower, airport/model and weather work is retained. The global enroute reference contains 70,285 historical airway segments, cycle 2012.08; it is not current worldwide AIRAC. Regional FAA/OpenFlightMaps and global navaids remain available.
 
-[Release details](https://github.com/HackYult/HackYult.github.io/releases/tag/v0.1.124) · [Sources / licences](https://hackyult.github.io/sources/). The deployed archive is verified by SHA-256 in GitHub Actions. Source documentation includes the primary AIP/ICAO references for identifier corrections and explicit coverage limits.
+[Release details](https://github.com/HackYult/HackYult.github.io/releases/tag/v0.1.125) · [Sources / licences](https://hackyult.github.io/sources/). The deployed archive is verified by SHA-256 in GitHub Actions. Source documentation includes the primary AIP/ICAO references for identifier corrections and explicit coverage limits.
