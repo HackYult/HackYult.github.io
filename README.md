@@ -1,17 +1,11 @@
 # AERONAUT flight simulator
 
-[Play release 130](https://hackyult.github.io/?v=130) · Default route VNKT → ZULS.
+[Play release 131](https://hackyult.github.io/?v=131) · Default VNKT → ZULS.
 
-The permanent in-flight freeze is fixed: leaving all nearby airport coverage previously made ground-service UI dereference an undefined airport layout before scheduling the next frame. Ground services now handle empty coverage, and view exceptions cannot terminate subsequent frames.
+Adds 45 authored FlightGear airport structures across 12 additional airports: LICJ, LIPZ, LIMC, LOWI, SBGL, EBBR, EGSS, KPHX, BIKF, EDDP, LFML and EDDK. Original geometry, published placement, source night artwork, author metadata and complete GPL-2.0-or-later source packages are retained. Static source mesh draws fall from 578 to 191, including night-material separation.
 
-A380 and 787 complete the Kathmandu–Lhasa takeoff-to-rollout regression with 169 actual approach DEM tiles, 100% progress, no crash and zero final speed. Unverified taxi exits remain manual after rollout. Arrival circuits now check forward terrain.
+VNKT and ZULS gain five terminal and three hangar footprints from OpenStreetMap. Missing heights remain estimates. Local foundations are graded, and all 1,095 stored airport surfaces pass grade-conflict checks. These checks do not constitute a current survey or independent satellite alignment of every building.
 
-Terrain meshes are created incrementally, geographic rebasing releases stale worker ownership, and visible satellite refinements commit in cohorts. Cold shader compilation, network delays and GPU hitches are not claimed eliminated.
+[Coverage, original sources and verification](https://hackyult.github.io/sources/release131/).
 
-The user-supplied 787 cockpit geometry is installed with four live main screens. Cockpit and Flight displays share state and rendering. Nine external PNGs were absent; neutral panel materials do not pretend to restore missing artwork.
-
-All 1,095 airports / 1,680 runways were sampled again at 1,331,655 stored-surface points. 100 crossing-runway components share a flat game datum without overwriting source heights; 725 airports still lack complete apron mapping. This is not an independent visual survey or exact satellite-alignment certification.
-
-29 final focused checks passed; 39 earlier broad checks passed. Browser terrain/render continuity: 10%–95.01%, 2,907 frames, seven rebases, zero errors. [Validation and images](https://hackyult.github.io/sources/release130/) · [Per-airport audit](https://hackyult.github.io/sources/release129/).
-
-[Release details](https://github.com/HackYult/HackYult.github.io/releases/tag/v0.1.130) · [Sources / licences](https://hackyult.github.io/sources/). GitHub Actions verifies the archive SHA-256 before deployment.
+Retains release 130 continuous-flight, terrain-streaming and live 787 cockpit fixes.
