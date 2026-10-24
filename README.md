@@ -1,13 +1,13 @@
 # AERONAUT flight simulator
 
-[Play the latest game](https://hackyult.github.io/?v=123)
+[Play the latest game](https://hackyult.github.io/?v=124)
 
-Release 123 reduces wheel braking, reverse thrust and rolling resistance, giving about 33% longer dry landing rollout in the eight-aircraft reference scenarios. Parking-brake holding force is retained.
+Release 124 fixes airport transition terrain work, source-aware imagery levels, Lhasa startup, mapped taxi pavement grading, separate taxi and takeoff clearances, runway side phraseology and six placeholder airport identifiers. Ground thrust is increased about 7% while the longer rollout from release 123 is retained. Systems default to a compact collapsed panel; all controls remain available.
 
-Release 122 improves wide city night streaming with retained overlapping tiles, bounded look-ahead and gradual light transitions. Ground thrust now uses a force-based reference-load estimate; wind response, touchdown drift and dry/wet braking are more gradual. Tower radio can be manually minimized and remembers its state.
+97 targeted checks and eight fleet reference takeoff/dry-wet rollout scenarios passed. Browser verification completed a VHHH gate to ZULS runway transition. These are game checks, not certified aircraft performance.
 
-The Global enroute reference adds 70,285 historical airway segments and 30,181 endpoint fixes. **It is archived cycle 2012.08, not current worldwide AIRAC or a complete current chart service.** Existing regional FAA/OpenFlightMaps and global OurAirports navaids remain available. Data is loaded on demand when opening/zooming the chart.
+The directory contains 1,153 records, including 1,095 with runway geometry. Imagery availability was sampled at their centres and runway ends; 323 require lower native detail. This is not visual verification of every airport against current satellite imagery. Mapped taxi geometry covers 382 airports; 57 automatic departure connections pass the current route audit. Missing connections remain unavailable rather than invented. Terminal-wall stands and interiors remain estimates.
 
-51 targeted checks and eight aircraft reference takeoff/dry-wet rollout scenarios passed. These are game-model checks, not certified type performance. Aircraft mass/thrust calibration, weather presets and scenery remain approximations. Earlier terminal and aircraft repairs are retained.
+Earlier city night streaming, minimized tower, airport/model and weather work is retained. The global enroute reference contains 70,285 historical airway segments, cycle 2012.08; it is not current worldwide AIRAC. Regional FAA/OpenFlightMaps and global navaids remain available.
 
-Game/model source, individual asset licences and navigation data attribution remain available through [Sources / licences](https://hackyult.github.io/sources/) and ATTRIBUTION.md. The verified release archive is deployed by GitHub Actions with a SHA-256 check.
+[Release details](https://github.com/HackYult/HackYult.github.io/releases/tag/v0.1.124) · [Sources / licences](https://hackyult.github.io/sources/). The deployed archive is verified by SHA-256 in GitHub Actions. Source documentation includes the primary AIP/ICAO references for identifier corrections and explicit coverage limits.
