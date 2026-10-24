@@ -19,8 +19,8 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Download verified game release
         run: |
-          curl --fail --location --retry 3 --output game.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.125/aeronaut-release125.tar.gz
-          echo "486cce764b926c5782b8c3fa7cdf1371f88e1b941fa6d33570d2edc1a03dae73  game.tar.gz" | sha256sum --check
+          curl --fail --location --retry 3 --output game.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.126/aeronaut-release126.tar.gz
+          echo "710bc1dda7d378c5cb60684394d1f282af0715a5f390a7015c19b8668adb1613  game.tar.gz" | sha256sum --check
           tar -xzf game.tar.gz
           test -f dist/index.html
           touch dist/.nojekyll
