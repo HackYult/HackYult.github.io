@@ -22,8 +22,8 @@ jobs:
           curl --fail --location --retry 3 --output game.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.136/aeronaut-release136.tar.gz
           echo "52d66687ac706caa690a82428605deca950008965b5a87f010d742faf20ff582  game.tar.gz" | sha256sum --check
           tar -xzf game.tar.gz
-          curl --fail --location --retry 3 --output navigation-patch.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.137/aeronaut-release137-overlay.tar.gz
-          echo "88a531cda39c1d00eec732e9dc2c7669ab0591136575dadfec5363db14963199  navigation-patch.tar.gz" | sha256sum --check
+          curl --fail --location --retry 3 --output navigation-patch.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.138/aeronaut-release138-overlay.tar.gz
+          echo "c4934f78a4bf18fe229c776247854c70366ca4282880132f3d6cd2271b7b6d30  navigation-patch.tar.gz" | sha256sum --check
           tar -xzf navigation-patch.tar.gz
           test -f dist/index.html
           touch dist/.nojekyll
