@@ -1,6 +1,8 @@
 # AERONAUT flight simulator
 
-[Play release 136](https://hackyult.github.io/?v=136) · Default VNKT → ZULS.
+[Play release 137](https://hackyult.github.io/?v=137) · Default VNKT → ZULS.
+
+Release 137 restores the missing Leaflet stylesheet in the navigation verification page and bounds chart grid widths so its controls stay inside the panel. The verified 136 data package is retained.
 
 Named waypoint routes now drive the route chart, map, minimap, progress, cruise guidance and 90% arrival start. The archived global airway graph runs in a worker; unpublished airport endpoint connections are dashed. A collapsible / enlargeable waypoint window shows sourced altitude and speed restrictions. Flight alert audio starts ON.
 
