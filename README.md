@@ -1,11 +1,11 @@
 # AERONAUT flight simulator
 
-[Play release 135](https://hackyult.github.io/?v=135) · Default VNKT → ZULS.
+[Play release 136](https://hackyult.github.io/?v=136) · Default VNKT → ZULS.
 
-Arrival mode starts at 90% of the selected route with 10% remaining, facing along the great-circle flight plan. The pilot handles descent and runway alignment. Gear and flaps are retracted, automation is off, and loaded terrain is checked for spawn clearance.
+Named waypoint routes now drive the route chart, map, minimap, progress, cruise guidance and 90% arrival start. The archived global airway graph runs in a worker; unpublished airport endpoint connections are dashed. A collapsible / enlargeable waypoint window shows sourced altitude and speed restrictions. Flight alert audio starts ON.
 
-[Arrival change and checks](https://hackyult.github.io/sources/release135/) · [Airport coverage and flown repairs retained from 134](https://hackyult.github.io/sources/release134/).
+[All 1153 airport coverage records and gaps](https://hackyult.github.io/data/procedures136/coverage.html) · [Sources and checks](https://hackyult.github.io/sources/release136/).
 
-18 related checks pass. An A380 VNKT–ZULS browser flight verified the new arrival start and manual flight. Existing airport structures, terrain, continuous-flight and landing-handoff repairs are retained.
+110 in-game airports have imported procedure references. The broader source collection contains 2159 airports and 15973 procedure records; that is not full current worldwide coverage. Historical airway references use cycle 2012.08 with dated CAAN supplements. FAA-derived XML has only a companion CIFP 2610 header, not independently verified XML currency. VQPR's current special approach remains unverified and explicitly missing. No invented approach replaces missing data.
 
-Source-authored structures cover 115 airports; 151 have packaged structures including mapped footprints. Exact current complete airport replication and certified flight procedures are not claimed.
+22 related checks pass; actual A380 VNKT–ZULS browser flight and navigation-window controls were verified. Existing airport structures and continuous-flight repairs are retained. Source-authored structures cover 115 airports; 151 include packaged mapped footprints. Exact current complete airport replication or certified procedures are not claimed.
