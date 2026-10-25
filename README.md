@@ -1,15 +1,11 @@
 # AERONAUT flight simulator
 
-[Play release 134](https://hackyult.github.io/?v=134) · Default VNKT → ZULS.
+[Play release 135](https://hackyult.github.io/?v=135) · Default VNKT → ZULS.
 
-Release 134 adds 59 original FlightGear structures at 41 airports. Source geometry, textures, authorship, source archives and published placement remain bundled. Batched source draws fall from 4,546 to 526.
+Arrival mode starts at 90% of the selected route with 10% remaining, facing along the great-circle flight plan. The pilot handles descent and runway alignment. Gear and flaps are retracted, automation is off, and loaded terrain is checked for spawn clearance.
 
-Actual browser flights exposed an automatic-landing handoff that retracted landing configuration on stable final. This is repaired, with staged configuration recovery. A fixed exterior light pool and preflight camera-material preparation reduce shader-compilation triggers during flight.
+[Arrival change and checks](https://hackyult.github.io/sources/release135/) · [Airport coverage and flown repairs retained from 134](https://hackyult.github.io/sources/release134/).
 
-[Coverage, flown checks, source dates and limitations](https://hackyult.github.io/sources/release134/).
+18 related checks pass. An A380 VNKT–ZULS browser flight verified the new arrival start and manual flight. Existing airport structures, terrain, continuous-flight and landing-handoff repairs are retained.
 
-A380 ZULS approach through gate parking and 777 EHAM moderate-wind approach through touchdown and taxi were flown in the actual renderer. 72 landing scenarios and full A380/787 VNKT–ZULS physics routes pass. 110 related regression checks and 18 final affected checks pass.
-
-Source-authored structures cover 115 airports; 151 have packaged models including mapped-footprint structures. Mapped centreline data covers 383 airports, while 58 currently pass complete automatic-route checks. Exact current terminal replication, surveyed satellite registration, certified flight dynamics and zero frame hitches are not claimed.
-
-Prior scenery, airport loading, tug, terrain transitions and continuous-flight repairs are retained.
+Source-authored structures cover 115 airports; 151 have packaged structures including mapped footprints. Exact current complete airport replication and certified flight procedures are not claimed.
