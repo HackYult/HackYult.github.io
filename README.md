@@ -1,11 +1,9 @@
 # AERONAUT flight simulator
 
-[Play release 138](https://hackyult.github.io/?v=138) · Default VNKT → ZULS.
+[Play release 139](https://hackyult.github.io/?v=139) · Default VNKT → ZULS.
 
-Release 138 adds left-stacked, collapsible and enlargeable Waypoints; bounded half-screen navigation windows; touch airport-code input repairs; source-defined historical VQPR RNP approaches; and ZULS original approach chart references.
+Release 139 adds a short high-precision aircraft rendering path for iPad/iPhone, retaining source UV textures and factory paint while bypassing the long PBR light shader. Compact navigation maps now draw published approach curves and missed-approach segments at every range, alongside the enroute route.
 
-The airport directory now contains 11,709 public chart document links. 595 airports have chart or official agency links; 510 list direct PDFs. These are not equivalent to complete worldwide procedure coverage: 112 in-game airports have imported procedure references, including 109 with approach references. Unpublished geometry is not invented.
+27 related checks pass. The Apple compatibility path is desktop-verified; physical iPad hardware validation remains outstanding. [Checks and limitations](https://hackyult.github.io/sources/release139/).
 
-[Airport-by-airport coverage and sources](https://hackyult.github.io/sources/release138/coverage.html) · [Validation](https://hackyult.github.io/sources/release138/) · [Source archive](https://hackyult.github.io/sources/game-source.zip)
-
-24 related checks pass. Navigation resize controls and an actual desktop A380 flight were checked. The reported intermittent A380 black fuselage was not reproduced and remains unresolved; physical iPad validation is outstanding.
+595 airports have public chart / agency links; 510 list direct PDFs, totaling 11,709 document links. Imported procedure references cover 112 in-game airports, including 109 with approach references. These do not constitute complete worldwide approach coverage. [All-airport coverage](https://hackyult.github.io/sources/release138/coverage.html).
