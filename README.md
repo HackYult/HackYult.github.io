@@ -1,11 +1,11 @@
 # AERONAUT flight simulator
 
-[Play release 131](https://hackyult.github.io/?v=131) · Default VNKT → ZULS.
+[Play release 132](https://hackyult.github.io/?v=132) · Default VNKT → ZULS.
 
-Adds 45 authored FlightGear airport structures across 12 additional airports: LICJ, LIPZ, LIMC, LOWI, SBGL, EBBR, EGSS, KPHX, BIKF, EDDP, LFML and EDDK. Original geometry, published placement, source night artwork, author metadata and complete GPL-2.0-or-later source packages are retained. Static source mesh draws fall from 578 to 191, including night-material separation.
+Adds 38 source-specific FlightGear structures at 23 additional airports, including Nice, Geneva, Birmingham, Düsseldorf, Milan Linate, Tallinn, Mactan Cebu and airports in Brazil and Argentina. Original geometry, published placement, facade/night artwork, authors and complete GPL-2.0-or-later preferred source archives are retained. Static source draws fall from 1,049 to 356; 17 related tests pass.
 
-VNKT and ZULS gain five terminal and three hangar footprints from OpenStreetMap. Missing heights remain estimates. Local foundations are graded, and all 1,095 stored airport surfaces pass grade-conflict checks. These checks do not constitute a current survey or independent satellite alignment of every building.
+[Coverage, source dates, original authors and verification](https://hackyult.github.io/sources/release132/).
 
-[Coverage, original sources and verification](https://hackyult.github.io/sources/release131/).
+Older source layouts and partial-airport coverage are disclosed. Incomplete artwork and candidates without a stored runway reference are excluded. This is not a current survey or certification of every airport's complete flight-loading path. The previous local LOWI terrain-loading timeout is not resolved by this scenery expansion.
 
-Retains release 130 continuous-flight, terrain-streaming and live 787 cockpit fixes.
+Prior scenery, continuous-flight and cockpit updates are retained.
