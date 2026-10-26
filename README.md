@@ -1,11 +1,11 @@
 # AERONAUT flight simulator
 
-[Play release 141](https://hackyult.github.io/?v=141) · Default VNKT → ZULS.
+[Play release 142](https://hackyult.github.io/?v=142) · Default ZBAA → VHHH · Boeing 787-9.
 
-PILOT NAVIGATION is docked below the right live map, with six flight readouts in compact expansion and all chart/procedure controls in half-screen enlargement. Route chart retains its original small button. Controls starts folded and remains accessible; its parent stacking boundary no longer hides it behind navigation.
+Right-side flight windows move to the foreground when opened or selected. Pilot Navigation retains its dock below the map; Route chart retains its original small button. Controls starts folded.
 
-A380 uses element-backed image decoding and CPU-owned RGBA textures for graphics-context recovery. The cached decompressed download buffer is released after parsing. Apple mobile rendering buffers are capped at 1.5x to reduce memory pressure.
+The route planner now includes a continuous, runway-aligned arrival transition before flight begins. The map, progress and flight assistant use the same path. Entry and final-intercept tangents are blended, and the 90% arrival view animates into the existing route rather than switching to the first unrelated instrument procedure.
 
-31 checks pass. Both PBR and Apple-compatible rendering passed simulated flight-position, bank, gear and forced graphics-context recovery checks. Physical iPad verification and conclusive diagnosis of that device's reported fault remain outstanding. [Validation and measured results](https://hackyult.github.io/sources/release141/).
+These generated runway transitions are simulation guidance, not published instrument approaches. Existing sourced procedures remain separate selectable references. Complete published worldwide approach coverage is not claimed; source collection continues.
 
-[Airport chart coverage and gaps](https://hackyult.github.io/sources/release138/coverage.html).
+[Validation](https://hackyult.github.io/sources/release142/) · [Published chart coverage and gaps](https://hackyult.github.io/sources/release138/coverage.html).
