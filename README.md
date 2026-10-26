@@ -1,13 +1,13 @@
 # AERONAUT flight simulator
 
-[Play release 144](https://hackyult.github.io/?v=144) · Default ZBAA → VHHH · Boeing 787-9.
+[Play release 145](https://hackyult.github.io/?v=145) · Default ZBAA → VHHH · Boeing 787-9 · Arrival starts with 5% remaining.
 
-Arrival mode starts with 5% of the selected route remaining. Route progress, spawn location and UI descriptions agree.
+IAPs in 2,110 FAA airport files are rebuilt from official CIFP 2610 primary records: 8,578 approaches and 104,565 leg records. Coordinates, waypoint order, transitions and radius-to-fix turns retain source evidence. Unsupported maneuvers and unresolved coordinates remain discontinuities.
 
-Release 144 adds safe graphics capability checks, fresh-context startup retry and context-loss recovery. Terrain height revisions morph over 4.2 seconds; imagery detail fades over 4.8 seconds.
+VQPR follows SUBSU1A / PR888 and the published X cloud-break route to PR708. Its missed approach is a separate optional overlay; no straight visual landing segment is invented. Continuous runway-matching primary approaches can replace generic game arrival geometry; DCT entries remain explicitly unpublished.
 
-Right-side flight windows move to the foreground when opened or selected. Pilot Navigation retains its dock below the map; Route chart retains its original small button. Controls starts folded.
+105 playable airports have rebuilt FAA primary approaches. VQPR/VHHH have dated chart references; ZULS remains chart-only; LBSF/LBBG community markers remain unverified. 1,043 playable airports still have no imported IAP. This release does not claim complete worldwide published approach coverage.
 
-The map, flight progress and assistant use a shared continuous arrival path. Generated runway transitions are simulation guidance, not published instrument approaches. Existing sourced procedures remain separate selectable references; worldwide published approach coverage remains incomplete.
+[Airport-by-airport evidence and tests](https://hackyult.github.io/sources/release145/).
 
-[Release validation](https://hackyult.github.io/sources/release144/) · [Chart coverage and gaps](https://hackyult.github.io/sources/release138/coverage.html).
+Graphics recovery and terrain transitions from release 144 remain included. Pilot Navigation remains below the map; Route chart retains its original small button and Controls starts folded.
