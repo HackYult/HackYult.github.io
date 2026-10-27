@@ -1,6 +1,6 @@
 # AERONAUT flight simulator
 
-[Play release 146](https://hackyult.github.io/?v=146) · Default ZBAA → VHHH · Boeing 787-9 · Arrival starts with 5% remaining.
+[Play release 147](https://hackyult.github.io/?v=147) · Default ZBAA → VHHH · Boeing 787-9 · Arrival starts with 5% remaining.
 
 Approach fixes use one combined map label: purple waypoint name and blue altitude. Duplicate route labels are removed immediately when a procedure loads or changes, including the initial asynchronous load.
 
@@ -11,3 +11,7 @@ Arrival guidance uses the same runway and direction as the selected source appro
 36 focused navigation checks passed. [Coverage and remaining gaps](https://hackyult.github.io/data/procedures136/coverage.html) · [Evidence, tests and limitations](https://hackyult.github.io/sources/release146/).
 
 Graphics recovery and terrain transitions from release 144 remain included. Pilot Navigation stays below the map; Route chart keeps its original small button and Controls starts folded.
+
+Release 147 fixes global-dialog stacking, bounded left/right tool windows and Controls access. Pilot Navigation follows the aircraft through automatic arrival chart loading; overview and manual pan remain available. Terrain upload work is budgeted, repeated source images share GPU storage, moving coverage and DEM seams transition from the rendered pose, and inactive cached scenery avoids matrix traversal.
+
+75 related regression checks passed. Real-game checks confirmed centred navigation, topmost world dialogs and Controls reopening. A synthetic 64-subtile test used 1 shared GPU texture instead of 64 duplicates; no whole-game FPS percentage or universal zero-pop guarantee is claimed. [Release 147 checks](https://hackyult.github.io/sources/release147/).
