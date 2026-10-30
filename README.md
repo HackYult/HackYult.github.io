@@ -1,17 +1,15 @@
 # AERONAUT flight simulator
 
-[Play release 147](https://hackyult.github.io/?v=147) · Default ZBAA → VHHH · Boeing 787-9 · Arrival starts with 5% remaining.
+[Play release 148](https://hackyult.github.io/?v=148) · ZBAA → VHHH · Boeing 787-9.
 
-Approach fixes use one combined map label: purple waypoint name and blue altitude. Duplicate route labels are removed immediately when a procedure loads or changes, including the initial asynchronous load.
+Release 148 checks the entire playable airport catalog, corrects 61 runway fields, quarantines two invalid runway-less duplicates, refreshes 103 airports from FAA cycle 2611 and adds five representative public-reference approaches. Displaced thresholds and historical physical-runway aliases now participate in arrival matching. Hong Kong's dated official centre-runway procedure tables are connected to the flight route.
 
-This update adds 967 representative approaches from the public AIRAC API and official CAAT coding-table approaches at six airports. It addresses 973 of the original 1,044 missing-airport records; 71 remain unresolved. API lateral main sequences are checked for coordinate continuity and physical runway alignment. They are not independently certified official-chart transcriptions; missing restriction rules or maneuver geometry are not invented.
+Of 1,151 playable airports, 1,081 archived-airway/approach combinations pass the continuity audit. 68 lack an imported IAP. LPPD retains a historical airway-network gap; PTSA lacks a complete supported final. The runway audit retains 203 source discrepancies for further review. Public API lateral references and historical tables are not certified current navigation data. [Per-airport sources and gaps](https://hackyult.github.io/data/procedures136/coverage.html).
 
-Arrival guidance uses the same runway and direction as the selected source approach. Paro follows its continuous published cloud-break track through PR708; missed approach is selectable separately and the visual landing segment is not fabricated. Daxing can connect through its real approach entry. Ponta Delgada remains disconnected in the historical airway network.
+Arrival joins now preserve both tangents with bounded turns. Source transitions and shared STAR/IAF fixes are retained. Ordered tracking prevents jumps across nearby return legs; descent planning avoids an unintended climb in long-route arrival starts. Four numerical 787 arrivals (VHHH, ZULS, KJFK, EGLL) reached landing and gate / verified runway hold.
 
-36 focused navigation checks passed. [Coverage and remaining gaps](https://hackyult.github.io/data/procedures136/coverage.html) · [Evidence, tests and limitations](https://hackyult.github.io/sources/release146/).
+Wind varies smoothly with height, position and time; wet braking varies continuously with speed. Final guidance uses ground speed for descent and applies crosswind correction once. Shorter procedural lookahead preserves tight turns. Original paint artwork is retained; exposed metal, glass, rubber and painted surfaces now have distinct reflection response. Apple compatibility mode uses a lightweight highlight shader. These are reduced-order game models, not the Microsoft Flight Simulator engine.
 
-Graphics recovery and terrain transitions from release 144 remain included. Pilot Navigation stays below the map; Route chart keeps its original small button and Controls starts folded.
+Pilot Navigation follows the aircraft and keeps its map visible when enlarged. Global dialogs occupy the browser top layer; Controls can expand and collapse. Terrain streaming retains the prior release's upload budgets and blended geometry / image transitions. Network/source-image differences and hardware limits still apply.
 
-Release 147 fixes global-dialog stacking, bounded left/right tool windows and Controls access. Pilot Navigation follows the aircraft through automatic arrival chart loading; overview and manual pan remain available. Terrain upload work is budgeted, repeated source images share GPU storage, moving coverage and DEM seams transition from the rendered pose, and inactive cached scenery avoids matrix traversal.
-
-75 related regression checks passed. Real-game checks confirmed centred navigation, topmost world dialogs and Controls reopening. A synthetic 64-subtile test used 1 shared GPU texture instead of 64 duplicates; no whole-game FPS percentage or universal zero-pop guarantee is claimed. [Release 147 checks](https://hackyult.github.io/sources/release147/).
+[Release 148 validation, sources and known limits](https://hackyult.github.io/sources/release148/). Default arrival start remains 5% of route remaining. Simulation only.
