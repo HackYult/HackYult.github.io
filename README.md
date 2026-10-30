@@ -1,6 +1,6 @@
 # AERONAUT flight simulator
 
-[Play release 148](https://hackyult.github.io/?v=148) · ZBAA → VHHH · Boeing 787-9.
+[Play release 149](https://hackyult.github.io/?v=149) · ZBAA → VHHH · Boeing 787-9.
 
 Release 148 checks the entire playable airport catalog, corrects 61 runway fields, quarantines two invalid runway-less duplicates, refreshes 103 airports from FAA cycle 2611 and adds five representative public-reference approaches. Displaced thresholds and historical physical-runway aliases now participate in arrival matching. Hong Kong's dated official centre-runway procedure tables are connected to the flight route.
 
@@ -13,3 +13,7 @@ Wind varies smoothly with height, position and time; wet braking varies continuo
 Pilot Navigation follows the aircraft and keeps its map visible when enlarged. Global dialogs occupy the browser top layer; Controls can expand and collapse. Terrain streaming retains the prior release's upload budgets and blended geometry / image transitions. Network/source-image differences and hardware limits still apply.
 
 [Release 148 validation, sources and known limits](https://hackyult.github.io/sources/release148/). Default arrival start remains 5% of route remaining. Simulation only.
+
+Release 149 raises bounded High / Ultra framebuffer clarity, enables aircraft-local sun/self/contact shadows, keeps paint grain fixed to UVs, propagates parent photograph fades to child terrain and limits the per-frame progress after stalls. Landing contact uses one damped compression / recovery, nose-contact timing and simulation-clock tyre smoke. The 787 upper gear is clipped against its measured wing skin in colour and shadow passes.
+
+A full FlightGear model-catalog comparison adds 138 source-authored airport structures at 77 airports, retaining original geometry, preferred source packages, licences and coordinates. The full catalog now has entries for 201 airports (including distinct map-derived entries); this is not 1,000 exact independent terminal models. Source vintage and positional accuracy vary.
