@@ -19,11 +19,11 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Download verified game release
         run: |
-          curl --fail --location --retry 3 --output game.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.136/aeronaut-release136.tar.gz?deployment=148
+          curl --fail --location --retry 3 --output game.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.136/aeronaut-release136.tar.gz?deployment=149
           echo "52d66687ac706caa690a82428605deca950008965b5a87f010d742faf20ff582  game.tar.gz" | sha256sum --check
           tar -xzf game.tar.gz
-          curl --fail --location --retry 3 --output navigation-patch.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.148/aeronaut-release148-overlay.tar.gz?deployment=148
-          echo "40ec7896bf87a1efb5998f97e8a9e1132438e228a4c74c8c9efe09423c820d04  navigation-patch.tar.gz" | sha256sum --check
+          curl --fail --location --retry 3 --output navigation-patch.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.149/aeronaut-release149-overlay.tar.gz?deployment=149
+          echo "09afa62275b225c4da8065aca31c15c8a68d9f12a8e74ffc4251feb3e604fcc2  navigation-patch.tar.gz" | sha256sum --check
           tar -xzf navigation-patch.tar.gz
           test -f dist/index.html
           touch dist/.nojekyll
