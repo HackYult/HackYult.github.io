@@ -1,5 +1,7 @@
 # AERONAUT flight simulator
 
+[Play release 152](https://hackyult.github.io/?v=152). Flight terrain/DEM/stitch residency improvements, zero-light work skipping, retained HUD nodes and minimap order caching, and exact-pixel PAPI instancing. Includes terminal repairs from releases 150–151. 91 relevant regression checks pass. [Verification and scope](https://hackyult.github.io/sources/release152/). Resolution and detail settings retained; microbenchmarks are not whole-game FPS results.
+
 [Play release 151](https://hackyult.github.io/?v=151). Mountain LOD seam/camera corrections, terminal eaves-aligned details, static-transform caching, bounded higher High supersampling and tighter sun shadows. [Verification and limits](https://hackyult.github.io/sources/release151/). CPU transform microbenchmark gains are not a whole-game FPS guarantee.
 
 Release 150 corrects common terminal roof/eaves/glazing geometry and unit conversion, adds the HTDA source outline and mapped jetbridge paths, and enables bounded apron shadows at night. This remains a partial architectural reconstruction: 934 airports still lack independent source models or detailed building outlines. [Changes and known gaps](https://hackyult.github.io/sources/release150/).
