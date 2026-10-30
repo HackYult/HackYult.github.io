@@ -1,6 +1,8 @@
 # AERONAUT flight simulator
 
-[Play release 149](https://hackyult.github.io/?v=149) · ZBAA → VHHH · Boeing 787-9.
+Release 150 corrects common terminal roof/eaves/glazing geometry and unit conversion, adds the HTDA source outline and mapped jetbridge paths, and enables bounded apron shadows at night. This remains a partial architectural reconstruction: 934 airports still lack independent source models or detailed building outlines. [Changes and known gaps](https://hackyult.github.io/sources/release150/).
+
+[Play release 150](https://hackyult.github.io/?v=150) · ZBAA → VHHH · Boeing 787-9.
 
 Release 148 checks the entire playable airport catalog, corrects 61 runway fields, quarantines two invalid runway-less duplicates, refreshes 103 airports from FAA cycle 2611 and adds five representative public-reference approaches. Displaced thresholds and historical physical-runway aliases now participate in arrival matching. Hong Kong's dated official centre-runway procedure tables are connected to the flight route.
 
