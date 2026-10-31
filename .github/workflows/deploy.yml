@@ -25,6 +25,9 @@ jobs:
           curl --fail --location --retry 3 --output navigation-patch.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.155/aeronaut-release155-overlay.tar.gz?deployment=155
           echo "e6401b16e88e41861ca6a93dae8cac0c52a5432d9af29c2405e80c6a57008096  navigation-patch.tar.gz" | sha256sum --check
           tar -xzf navigation-patch.tar.gz
+          curl --fail --location --retry 3 --output audio-fix.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.155/aeronaut-release155-audio-fix.tar.gz
+          echo "4eb3f1e84453bddd95d7e310b5ba00239c6b17d99d7df6b9e80c0fa4cb0055f2  audio-fix.tar.gz" | sha256sum --check
+          tar -xzf audio-fix.tar.gz
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
