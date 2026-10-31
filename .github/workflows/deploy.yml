@@ -19,10 +19,10 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Download verified game release
         run: |
-          curl --fail --location --retry 3 --output game.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.136/aeronaut-release136.tar.gz?deployment=156
+          curl --fail --location --retry 3 --output game.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.136/aeronaut-release136.tar.gz?deployment=157
           echo "52d66687ac706caa690a82428605deca950008965b5a87f010d742faf20ff582  game.tar.gz" | sha256sum --check
           tar -xzf game.tar.gz
-          curl --fail --location --retry 3 --output navigation-patch.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.155/aeronaut-release155-overlay.tar.gz?deployment=156
+          curl --fail --location --retry 3 --output navigation-patch.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.155/aeronaut-release155-overlay.tar.gz?deployment=157
           echo "e6401b16e88e41861ca6a93dae8cac0c52a5432d9af29c2405e80c6a57008096  navigation-patch.tar.gz" | sha256sum --check
           tar -xzf navigation-patch.tar.gz
           curl --fail --location --retry 3 --output audio-fix.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.155/aeronaut-release155-audio-fix.tar.gz
@@ -31,6 +31,9 @@ jobs:
           curl --fail --location --retry 3 --output alerts156.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.156/aeronaut-release156-overlay.tar.gz
           echo "55b83e7d897afe9e7e3ab05f49ffa9d2e1937d3f5d8332abe9d153b53a0fbfde  alerts156.tar.gz" | sha256sum --check
           tar -xzf alerts156.tar.gz
+          curl --fail --location --retry 3 --output weather157.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.157/aeronaut-release157-overlay.tar.gz
+          echo "68d273087a48574ce8060eab274d72d21dd89276246354a09420ed7906d293d2  weather157.tar.gz" | sha256sum --check
+          tar -xzf weather157.tar.gz
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
