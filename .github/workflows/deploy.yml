@@ -49,6 +49,9 @@ jobs:
           curl --fail --location --retry 3 --output terminals162.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.162/aeronaut-release162-overlay.tar.gz
           echo "5a59bfa143f5d0a3701958c9d2b2a46e707352e951f49a5f4ec2587b4bc77867  terminals162.tar.gz" | sha256sum --check
           tar -xzf terminals162.tar.gz
+          curl --fail --location --retry 3 --output restoration170.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.170/aeronaut-release170-overlay.tar.gz
+          echo "d982b5977cce539025b34e373e7e16cfdbb90e118f817084f647e9f3635dad88  restoration170.tar.gz" | sha256sum --check
+          tar -xzf restoration170.tar.gz
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
