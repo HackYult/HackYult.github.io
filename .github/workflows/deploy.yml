@@ -76,6 +76,15 @@ jobs:
           curl --fail --location --retry 3 --output airfield178.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.178/aeronaut-release178-overlay.tar.gz
           echo "eb92a102bee48262ae0ee6b4face5b893be7a521e1bd88119e8b1c86d8828ae1  airfield178.tar.gz" | sha256sum --check
           tar -xzf airfield178.tar.gz
+          # Keep the taxi card readable alongside expanded radar and waypoints.
+          cat >> dist/flight-layout.css <<'CSS178'
+          /* Keep the taxi card readable while the other left-dock panels are open. */
+          #tower-radio-panel.taxi-guidance178{flex-shrink:0;min-height:48px;box-sizing:border-box}
+          #tower-radio-panel.taxi-guidance178.radio-minimized{overflow:hidden}
+          CSS178
+          echo "772af41b5d5c1bdcd2640f875776b13a423fbad3579a5371a3a94bd514cada8d  dist/flight-layout.css" | sha256sum --check
+          cp dist/flight-layout.css dist/sources/release178/flight-layout.css
+          sed -i 's/flight-layout.css?v=178/flight-layout.css?v=178.1/' dist/index.html
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
