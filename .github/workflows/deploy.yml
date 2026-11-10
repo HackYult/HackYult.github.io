@@ -85,6 +85,9 @@ jobs:
           echo "772af41b5d5c1bdcd2640f875776b13a423fbad3579a5371a3a94bd514cada8d  dist/flight-layout.css" | sha256sum --check
           cp dist/flight-layout.css dist/sources/release178/flight-layout.css
           sed -i 's/flight-layout.css?v=178/flight-layout.css?v=178.1/' dist/index.html
+          curl --fail --location --retry 3 --output boarding179.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.179/aeronaut-release179-overlay.tar.gz
+          echo "cf3add1791bec974ef45fb25c07c93373e2a536e0749cb2f96c75338930a4875  boarding179.tar.gz" | sha256sum --check
+          tar -xzf boarding179.tar.gz
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
