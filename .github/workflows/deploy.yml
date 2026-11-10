@@ -61,6 +61,9 @@ jobs:
           curl --fail --location --retry 3 --output runways173.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.173/aeronaut-release173-overlay.tar.gz
           echo "b064640c8820abaa0d2af705c560d19a4a719b02eb66cc2d28de748853f3d83f  runways173.tar.gz" | sha256sum --check
           tar -xzf runways173.tar.gz
+          curl --fail --location --retry 3 --output airfield174.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.174/aeronaut-release174-overlay.tar.gz
+          echo "6ac6cc00903b6cc38152a013d870f15292f4effeb0eca0d4bbb494443024f0e6  airfield174.tar.gz" | sha256sum --check
+          tar -xzf airfield174.tar.gz
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
