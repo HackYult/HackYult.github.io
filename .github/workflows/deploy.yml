@@ -112,6 +112,9 @@ jobs:
           curl --fail --location --retry 3 --output upgrade187.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.187/aeronaut-release187-overlay.tar.gz
           echo "c67340db79b998c0571b0c95a72e9626cdc1fd929e93ec76f1b746f8af61a71b  upgrade187.tar.gz" | sha256sum --check
           tar -xzf upgrade187.tar.gz
+          curl --fail --location --retry 3 --output ground188.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.188/aeronaut-release188-overlay.tar.gz
+          echo "13f7ff50201dd4656a0d77ecfedee72a6af9193baa25cb9d60a4d72f15c92a09  ground188.tar.gz" | sha256sum --check
+          tar -xzf ground188.tar.gz
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
