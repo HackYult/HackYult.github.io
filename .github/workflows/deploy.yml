@@ -153,6 +153,16 @@ jobs:
           python3 scripts/version-runtime.py
           node --check dist/src/app.js
           node --test dist/tests/flight-desk190.test.js dist/tests/ground-render189.test.js
+          # Interface 191: responsive tool navigation and consistent flight controls.
+          curl --fail --location --retry 3 --output source191.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/5334883ac52e01b1a6ed87b8d65bc09212982e20/patches/release191/source191.b64
+          echo "6fd1345d46cf7d7effd9c82e4edbde3a289d7da027359c9c907f3d25352994ec  source191.b64" | sha256sum --check
+          curl --fail --location --retry 3 --output apply-ui191.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/5334883ac52e01b1a6ed87b8d65bc09212982e20/patches/release191/apply-ui191.py
+          echo "3a5f710e3c9b445f7c9ae0973cca2df3f26ce1b9cd809bd565f5cc838b295cde  apply-ui191.py" | sha256sum --check
+          python3 apply-ui191.py
+          python3 scripts/version-runtime.py
+          node --check dist/src/app.js
+          node --check dist/src/flight-desk190.js
+          node --test dist/tests/interface191.test.js dist/tests/flight-desk190.test.js dist/tests/ground-render189.test.js
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
