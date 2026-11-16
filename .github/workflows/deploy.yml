@@ -1,6 +1,11 @@
 name: Publish AERONAUT game
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/deploy.yml'
+      - 'patches/release189/**'
 permissions:
   contents: read
   pages: write
@@ -115,9 +120,28 @@ jobs:
           curl --fail --location --retry 3 --output ground188.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.188/aeronaut-release188-overlay.tar.gz
           echo "13f7ff50201dd4656a0d77ecfedee72a6af9193baa25cb9d60a4d72f15c92a09  ground188.tar.gz" | sha256sum --check
           tar -xzf ground188.tar.gz
-          curl --fail --location --retry 3 --output startup189.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.189/aeronaut-release189-overlay.tar.gz
-          echo "ffac51a619cd8c815d2465a675e4d9a62b689a325fd7fcba8e4f4af313721775  startup189.tar.gz" | sha256sum --check
-          tar -xzf startup189.tar.gz
+          # Verified source-only repair; original model assets remain unchanged.
+          mkdir -p scripts data dist/tests
+          curl --fail --location --retry 3 --output dist/src/apron-vehicles187.js https://raw.githubusercontent.com/HackYult/HackYult.github.io/869ff848407a358937d1c5c27068f682e7c51661/patches/release189/apron-vehicles187.js
+          echo "8ea6390b2b26df4792c03f5370be3b01e5375a8f3caca57da9869ba3041ee5c2  dist/src/apron-vehicles187.js" | sha256sum --check
+          curl --fail --location --retry 3 --output scripts/version-runtime.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/869ff848407a358937d1c5c27068f682e7c51661/patches/release189/version-runtime.py
+          echo "cf0658da99b2c3c2542a6ae5b010497a0381b634870deeb56243b43ce296a85f  scripts/version-runtime.py" | sha256sum --check
+          curl --fail --location --retry 3 --output dist/tests/ground-render189.test.js https://raw.githubusercontent.com/HackYult/HackYult.github.io/869ff848407a358937d1c5c27068f682e7c51661/patches/release189/ground-render189.test.js
+          echo "4ffe05a525ca0111c2887fb965f2fb94383f43ce9d2f275600824ae2deee9947  dist/tests/ground-render189.test.js" | sha256sum --check
+          python3 - <<'PY189'
+          from pathlib import Path
+          import json,zipfile
+          p=Path('dist/data/render-release.json');d=json.loads(p.read_text());d.update(version=189,startupRevision=189,airportEquipmentRevision=189);p.write_text(json.dumps(d)+'\n');Path('data/render-release.json').write_text(p.read_text())
+          source=Path('dist/sources/game-source.zip');tmp=source.with_suffix('.189.zip')
+          replacements={'src/apron-vehicles187.js':Path('dist/src/apron-vehicles187.js'),'tests/ground-render189.test.js':Path('dist/tests/ground-render189.test.js'),'data/render-release.json':p}
+          with zipfile.ZipFile(source) as old,zipfile.ZipFile(tmp,'w',compression=zipfile.ZIP_DEFLATED) as new:
+           for item in old.infolist():
+            if item.filename not in replacements:new.writestr(item,old.read(item.filename))
+           for name,file in replacements.items():new.write(file,name)
+          tmp.replace(source)
+          PY189
+          python3 scripts/version-runtime.py
+          node --test dist/tests/ground-render189.test.js
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
