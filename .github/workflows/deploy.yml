@@ -5,7 +5,6 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/deploy.yml'
-      - 'patches/release189/**'
 permissions:
   contents: read
   pages: write
@@ -122,11 +121,11 @@ jobs:
           tar -xzf ground188.tar.gz
           # Verified source-only repair; original model assets remain unchanged.
           mkdir -p scripts data dist/tests
-          curl --fail --location --retry 3 --output dist/src/apron-vehicles187.js https://raw.githubusercontent.com/HackYult/HackYult.github.io/869ff848407a358937d1c5c27068f682e7c51661/patches/release189/apron-vehicles187.js
+          curl --fail --location --retry 3 --output dist/src/apron-vehicles187.js https://raw.githubusercontent.com/HackYult/HackYult.github.io/6ad6b3cd7e30c3db4f5d917c1468f2f9395538ab/patches/release189/apron-vehicles187.js
           echo "8ea6390b2b26df4792c03f5370be3b01e5375a8f3caca57da9869ba3041ee5c2  dist/src/apron-vehicles187.js" | sha256sum --check
-          curl --fail --location --retry 3 --output scripts/version-runtime.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/869ff848407a358937d1c5c27068f682e7c51661/patches/release189/version-runtime.py
-          echo "cf0658da99b2c3c2542a6ae5b010497a0381b634870deeb56243b43ce296a85f  scripts/version-runtime.py" | sha256sum --check
-          curl --fail --location --retry 3 --output dist/tests/ground-render189.test.js https://raw.githubusercontent.com/HackYult/HackYult.github.io/869ff848407a358937d1c5c27068f682e7c51661/patches/release189/ground-render189.test.js
+          curl --fail --location --retry 3 --output scripts/version-runtime.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/6ad6b3cd7e30c3db4f5d917c1468f2f9395538ab/patches/release189/version-runtime.py
+          echo "808c6b096a6c232324b1ca98567fb15dfcc13c031952f6bdb2e45a46b5870401  scripts/version-runtime.py" | sha256sum --check
+          curl --fail --location --retry 3 --output dist/tests/ground-render189.test.js https://raw.githubusercontent.com/HackYult/HackYult.github.io/6ad6b3cd7e30c3db4f5d917c1468f2f9395538ab/patches/release189/ground-render189.test.js
           echo "4ffe05a525ca0111c2887fb965f2fb94383f43ce9d2f275600824ae2deee9947  dist/tests/ground-render189.test.js" | sha256sum --check
           python3 - <<'PY189'
           from pathlib import Path
