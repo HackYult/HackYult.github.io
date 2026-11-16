@@ -141,6 +141,18 @@ jobs:
           PY189
           python3 scripts/version-runtime.py
           node --test dist/tests/ground-render189.test.js
+          # Flight Desk: nine opt-in systems, preserving the existing checklist.
+          curl --fail --location --retry 3 --output source190.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/2b26ab4e37d94244d3a0f934e2eb710fd794fd43/patches/release190/source190.b64
+          echo "5db5a41da5d43e08cafdc336c93070ad0337653ca33a62f8f02f208f0912e7ea  source190.b64" | sha256sum --check
+          curl --fail --location --retry 3 --output apply-desk190.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/2b26ab4e37d94244d3a0f934e2eb710fd794fd43/patches/release190/apply-desk190.py
+          echo "14876e94b3ca935701443fc1d84e8b670cf64588270fde2123d3e7d5aa5bcddc  apply-desk190.py" | sha256sum --check
+          curl --fail --location --retry 3 --output worker-source190.glb https://www.innerscene.com/api/library/walk-carrying-briefcase-jordan-3d-person-animated-c805c97a/download
+          echo "b74fd05bb04cdfd2dad0a587dac828e269dc306ac07e57058712ef59871c6e12  worker-source190.glb" | sha256sum --check
+          python3 -m pip install --disable-pip-version-check Pillow==12.0.0
+          python3 apply-desk190.py
+          python3 scripts/version-runtime.py
+          node --check dist/src/app.js
+          node --test dist/tests/flight-desk190.test.js dist/tests/ground-render189.test.js
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
