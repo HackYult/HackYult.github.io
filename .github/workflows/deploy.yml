@@ -23,61 +23,61 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Download verified game release
         run: |
-          curl --fail --location --retry 3 --output game.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.136/aeronaut-release136.tar.gz?deployment=162
+          curl --fail --location --retry 3 --retry-all-errors --output game.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.136/aeronaut-release136.tar.gz?deployment=162
           echo "52d66687ac706caa690a82428605deca950008965b5a87f010d742faf20ff582  game.tar.gz" | sha256sum --check
           tar -xzf game.tar.gz
-          curl --fail --location --retry 3 --output navigation-patch.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.155/aeronaut-release155-overlay.tar.gz?deployment=162
+          curl --fail --location --retry 3 --retry-all-errors --output navigation-patch.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.155/aeronaut-release155-overlay.tar.gz?deployment=162
           echo "e6401b16e88e41861ca6a93dae8cac0c52a5432d9af29c2405e80c6a57008096  navigation-patch.tar.gz" | sha256sum --check
           tar -xzf navigation-patch.tar.gz
-          curl --fail --location --retry 3 --output audio-fix.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.155/aeronaut-release155-audio-fix.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output audio-fix.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.155/aeronaut-release155-audio-fix.tar.gz
           echo "4eb3f1e84453bddd95d7e310b5ba00239c6b17d99d7df6b9e80c0fa4cb0055f2  audio-fix.tar.gz" | sha256sum --check
           tar -xzf audio-fix.tar.gz
-          curl --fail --location --retry 3 --output alerts156.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.156/aeronaut-release156-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output alerts156.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.156/aeronaut-release156-overlay.tar.gz
           echo "55b83e7d897afe9e7e3ab05f49ffa9d2e1937d3f5d8332abe9d153b53a0fbfde  alerts156.tar.gz" | sha256sum --check
           tar -xzf alerts156.tar.gz
-          curl --fail --location --retry 3 --output weather157.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.157/aeronaut-release157-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output weather157.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.157/aeronaut-release157-overlay.tar.gz
           echo "68d273087a48574ce8060eab274d72d21dd89276246354a09420ed7906d293d2  weather157.tar.gz" | sha256sum --check
           tar -xzf weather157.tar.gz
-          curl --fail --location --retry 3 --output alerts158.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.158/aeronaut-release158-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output alerts158.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.158/aeronaut-release158-overlay.tar.gz
           echo "c01775a3873abe6ab9128e6146daebb05e62ffd5770940ed5166f8d2d6234cd6  alerts158.tar.gz" | sha256sum --check
           tar -xzf alerts158.tar.gz
-          curl --fail --location --retry 3 --output performance159.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.159/aeronaut-release159-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output performance159.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.159/aeronaut-release159-overlay.tar.gz
           echo "56b63112b23416ca930e9a5e639437e360c6ba1051c2daa50d38a3997fc5ff76  performance159.tar.gz" | sha256sum --check
           tar -xzf performance159.tar.gz
-          curl --fail --location --retry 3 --output terminals160.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.160/aeronaut-release160-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output terminals160.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.160/aeronaut-release160-overlay.tar.gz
           echo "437c7fb42a2b3740af6fa227bdfa954f109c0c6bfb30b33cad2a414478dab16b  terminals160.tar.gz" | sha256sum --check
           tar -xzf terminals160.tar.gz
-          curl --fail --location --retry 3 --output terminals161.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.161/aeronaut-release161-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output terminals161.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.161/aeronaut-release161-overlay.tar.gz
           echo "73195cd3679b16a545282e61c5da5a2e50405b635bef8567ee9c57b2649502b4  terminals161.tar.gz" | sha256sum --check
           tar -xzf terminals161.tar.gz
-          curl --fail --location --retry 3 --output terminals162.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.162/aeronaut-release162-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output terminals162.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.162/aeronaut-release162-overlay.tar.gz
           echo "5a59bfa143f5d0a3701958c9d2b2a46e707352e951f49a5f4ec2587b4bc77867  terminals162.tar.gz" | sha256sum --check
           tar -xzf terminals162.tar.gz
-          curl --fail --location --retry 3 --output restoration170.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.170/aeronaut-release170-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output restoration170.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.170/aeronaut-release170-overlay.tar.gz
           echo "d982b5977cce539025b34e373e7e16cfdbb90e118f817084f647e9f3635dad88  restoration170.tar.gz" | sha256sum --check
           tar -xzf restoration170.tar.gz
-          curl --fail --location --retry 3 --output startup171.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.171/aeronaut-release171-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output startup171.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.171/aeronaut-release171-overlay.tar.gz
           echo "4bb17127fdb7bde1c753b0eb0565dfade21ce27d0bb30e9fb40cce7176087d15  startup171.tar.gz" | sha256sum --check
           tar -xzf startup171.tar.gz
-          curl --fail --location --retry 3 --output takeoff172.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.172/aeronaut-release172-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output takeoff172.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.172/aeronaut-release172-overlay.tar.gz
           echo "c5544f26bec926c87b05b0827bc6a0ba83aec3568e143e565e18210ead854ba9  takeoff172.tar.gz" | sha256sum --check
           tar -xzf takeoff172.tar.gz
-          curl --fail --location --retry 3 --output runways173.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.173/aeronaut-release173-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output runways173.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.173/aeronaut-release173-overlay.tar.gz
           echo "b064640c8820abaa0d2af705c560d19a4a719b02eb66cc2d28de748853f3d83f  runways173.tar.gz" | sha256sum --check
           tar -xzf runways173.tar.gz
-          curl --fail --location --retry 3 --output airfield174.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.174/aeronaut-release174-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output airfield174.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.174/aeronaut-release174-overlay.tar.gz
           echo "6ac6cc00903b6cc38152a013d870f15292f4effeb0eca0d4bbb494443024f0e6  airfield174.tar.gz" | sha256sum --check
           tar -xzf airfield174.tar.gz
-          curl --fail --location --retry 3 --output descent175.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.175/aeronaut-release175-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output descent175.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.175/aeronaut-release175-overlay.tar.gz
           echo "4fdb85bcf80c86167802078c299940785c688775d1f3920faf3d547193ab9734  descent175.tar.gz" | sha256sum --check
           tar -xzf descent175.tar.gz
-          curl --fail --location --retry 3 --output night176.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.176/aeronaut-release176-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output night176.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.176/aeronaut-release176-overlay.tar.gz
           echo "dce7108dc35f852e0d13c47e22d4fd30dc554f9ff5d805479d9a1ddb1cdfb8e6  night176.tar.gz" | sha256sum --check
           tar -xzf night176.tar.gz
-          curl --fail --location --retry 3 --output airfield177.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.177/aeronaut-release177-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output airfield177.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.177/aeronaut-release177-overlay.tar.gz
           echo "8bc4c1b593956377cac840f484266eee90dd8a49d3715e6fb4269dc08b06a0dd  airfield177.tar.gz" | sha256sum --check
           tar -xzf airfield177.tar.gz
-          curl --fail --location --retry 3 --output airfield178.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.178/aeronaut-release178-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output airfield178.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.178/aeronaut-release178-overlay.tar.gz
           echo "eb92a102bee48262ae0ee6b4face5b893be7a521e1bd88119e8b1c86d8828ae1  airfield178.tar.gz" | sha256sum --check
           tar -xzf airfield178.tar.gz
           # Keep the taxi card readable alongside expanded radar and waypoints.
@@ -89,43 +89,43 @@ jobs:
           echo "772af41b5d5c1bdcd2640f875776b13a423fbad3579a5371a3a94bd514cada8d  dist/flight-layout.css" | sha256sum --check
           cp dist/flight-layout.css dist/sources/release178/flight-layout.css
           sed -i 's/flight-layout.css?v=178/flight-layout.css?v=178.1/' dist/index.html
-          curl --fail --location --retry 3 --output boarding179.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.179/aeronaut-release179-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output boarding179.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.179/aeronaut-release179-overlay.tar.gz
           echo "cf3add1791bec974ef45fb25c07c93373e2a536e0749cb2f96c75338930a4875  boarding179.tar.gz" | sha256sum --check
           tar -xzf boarding179.tar.gz
-          curl --fail --location --retry 3 --output boarding180.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.180/aeronaut-release180-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output boarding180.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.180/aeronaut-release180-overlay.tar.gz
           echo "cadca1a6b61c09bb311c87382303d55986a7756a60127fcc940260ac312d6801  boarding180.tar.gz" | sha256sum --check
           tar -xzf boarding180.tar.gz
-          curl --fail --location --retry 3 --output briefing181.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.181/aeronaut-release181-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output briefing181.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.181/aeronaut-release181-overlay.tar.gz
           echo "ab5da0aa4c7b9690bc55f878d7a78b0ed9021367ab3f40545bbb53c79c18a307  briefing181.tar.gz" | sha256sum --check
           tar -xzf briefing181.tar.gz
-          curl --fail --location --retry 3 --output signs182.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.182/aeronaut-release182-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output signs182.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.182/aeronaut-release182-overlay.tar.gz
           echo "72f18c38ee5dc90db2fc85a9c43e64e13016f495053aeeede89b4de4fd419369  signs182.tar.gz" | sha256sum --check
           tar -xzf signs182.tar.gz
-          curl --fail --location --retry 3 --output ground183.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.183/aeronaut-release183-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output ground183.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.183/aeronaut-release183-overlay.tar.gz
           echo "20d1329031fe62c1b0f9e5d69380d9b6dc0608ad455227fc8954b3691d72e5b5  ground183.tar.gz" | sha256sum --check
           tar -xzf ground183.tar.gz
-          curl --fail --location --retry 3 --output preflight184.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.184/aeronaut-release184-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output preflight184.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.184/aeronaut-release184-overlay.tar.gz
           echo "f112fb6f305f8205640f92fbf3d48c5b1405d3d2e7f1b63a14fb9cf8cdf9c63d  preflight184.tar.gz" | sha256sum --check
           tar -xzf preflight184.tar.gz
-          curl --fail --location --retry 3 --output pushback185.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.185/aeronaut-release185-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output pushback185.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.185/aeronaut-release185-overlay.tar.gz
           echo "87226b1dfa8a09a04eae9a92b19917a61ea7aab820b47fbc4fcbb5cc79f52b9c  pushback185.tar.gz" | sha256sum --check
           tar -xzf pushback185.tar.gz
-          curl --fail --location --retry 3 --output taxi186.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.186/aeronaut-release186-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output taxi186.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.186/aeronaut-release186-overlay.tar.gz
           echo "93a83f3af615086f9a7695a7a92c07e190bd9fbd0e8be9678c3cf98009be20e9  taxi186.tar.gz" | sha256sum --check
           tar -xzf taxi186.tar.gz
-          curl --fail --location --retry 3 --output upgrade187.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.187/aeronaut-release187-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output upgrade187.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.187/aeronaut-release187-overlay.tar.gz
           echo "c67340db79b998c0571b0c95a72e9626cdc1fd929e93ec76f1b746f8af61a71b  upgrade187.tar.gz" | sha256sum --check
           tar -xzf upgrade187.tar.gz
-          curl --fail --location --retry 3 --output ground188.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.188/aeronaut-release188-overlay.tar.gz
+          curl --fail --location --retry 3 --retry-all-errors --output ground188.tar.gz https://github.com/HackYult/HackYult.github.io/releases/download/v0.1.188/aeronaut-release188-overlay.tar.gz
           echo "13f7ff50201dd4656a0d77ecfedee72a6af9193baa25cb9d60a4d72f15c92a09  ground188.tar.gz" | sha256sum --check
           tar -xzf ground188.tar.gz
           # Verified source-only repair; original model assets remain unchanged.
           mkdir -p scripts data dist/tests
-          curl --fail --location --retry 3 --output dist/src/apron-vehicles187.js https://raw.githubusercontent.com/HackYult/HackYult.github.io/6ad6b3cd7e30c3db4f5d917c1468f2f9395538ab/patches/release189/apron-vehicles187.js
+          curl --fail --location --retry 3 --retry-all-errors --output dist/src/apron-vehicles187.js https://raw.githubusercontent.com/HackYult/HackYult.github.io/6ad6b3cd7e30c3db4f5d917c1468f2f9395538ab/patches/release189/apron-vehicles187.js
           echo "8ea6390b2b26df4792c03f5370be3b01e5375a8f3caca57da9869ba3041ee5c2  dist/src/apron-vehicles187.js" | sha256sum --check
-          curl --fail --location --retry 3 --output scripts/version-runtime.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/6ad6b3cd7e30c3db4f5d917c1468f2f9395538ab/patches/release189/version-runtime.py
+          curl --fail --location --retry 3 --retry-all-errors --output scripts/version-runtime.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/6ad6b3cd7e30c3db4f5d917c1468f2f9395538ab/patches/release189/version-runtime.py
           echo "808c6b096a6c232324b1ca98567fb15dfcc13c031952f6bdb2e45a46b5870401  scripts/version-runtime.py" | sha256sum --check
-          curl --fail --location --retry 3 --output dist/tests/ground-render189.test.js https://raw.githubusercontent.com/HackYult/HackYult.github.io/6ad6b3cd7e30c3db4f5d917c1468f2f9395538ab/patches/release189/ground-render189.test.js
+          curl --fail --location --retry 3 --retry-all-errors --output dist/tests/ground-render189.test.js https://raw.githubusercontent.com/HackYult/HackYult.github.io/6ad6b3cd7e30c3db4f5d917c1468f2f9395538ab/patches/release189/ground-render189.test.js
           echo "4ffe05a525ca0111c2887fb965f2fb94383f43ce9d2f275600824ae2deee9947  dist/tests/ground-render189.test.js" | sha256sum --check
           python3 - <<'PY189'
           from pathlib import Path
@@ -142,11 +142,11 @@ jobs:
           python3 scripts/version-runtime.py
           node --test dist/tests/ground-render189.test.js
           # Flight Desk: nine opt-in systems, preserving the existing checklist.
-          curl --fail --location --retry 3 --output source190.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/2b26ab4e37d94244d3a0f934e2eb710fd794fd43/patches/release190/source190.b64
+          curl --fail --location --retry 3 --retry-all-errors --output source190.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/2b26ab4e37d94244d3a0f934e2eb710fd794fd43/patches/release190/source190.b64
           echo "5db5a41da5d43e08cafdc336c93070ad0337653ca33a62f8f02f208f0912e7ea  source190.b64" | sha256sum --check
-          curl --fail --location --retry 3 --output apply-desk190.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/2b26ab4e37d94244d3a0f934e2eb710fd794fd43/patches/release190/apply-desk190.py
+          curl --fail --location --retry 3 --retry-all-errors --output apply-desk190.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/2b26ab4e37d94244d3a0f934e2eb710fd794fd43/patches/release190/apply-desk190.py
           echo "14876e94b3ca935701443fc1d84e8b670cf64588270fde2123d3e7d5aa5bcddc  apply-desk190.py" | sha256sum --check
-          curl --fail --location --retry 3 --output worker-source190.glb https://www.innerscene.com/api/library/walk-carrying-briefcase-jordan-3d-person-animated-c805c97a/download
+          curl --fail --location --retry 3 --retry-all-errors --output worker-source190.glb https://www.innerscene.com/api/library/walk-carrying-briefcase-jordan-3d-person-animated-c805c97a/download
           echo "b74fd05bb04cdfd2dad0a587dac828e269dc306ac07e57058712ef59871c6e12  worker-source190.glb" | sha256sum --check
           python3 -m pip install --disable-pip-version-check Pillow==12.0.0
           python3 apply-desk190.py
@@ -154,9 +154,9 @@ jobs:
           node --check dist/src/app.js
           node --test dist/tests/flight-desk190.test.js dist/tests/ground-render189.test.js
           # Interface 191: responsive tool navigation and consistent flight controls.
-          curl --fail --location --retry 3 --output source191.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/5334883ac52e01b1a6ed87b8d65bc09212982e20/patches/release191/source191.b64
+          curl --fail --location --retry 3 --retry-all-errors --output source191.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/5334883ac52e01b1a6ed87b8d65bc09212982e20/patches/release191/source191.b64
           echo "6fd1345d46cf7d7effd9c82e4edbde3a289d7da027359c9c907f3d25352994ec  source191.b64" | sha256sum --check
-          curl --fail --location --retry 3 --output apply-ui191.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/5334883ac52e01b1a6ed87b8d65bc09212982e20/patches/release191/apply-ui191.py
+          curl --fail --location --retry 3 --retry-all-errors --output apply-ui191.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/5334883ac52e01b1a6ed87b8d65bc09212982e20/patches/release191/apply-ui191.py
           echo "3a5f710e3c9b445f7c9ae0973cca2df3f26ce1b9cd809bd565f5cc838b295cde  apply-ui191.py" | sha256sum --check
           python3 apply-ui191.py
           python3 scripts/version-runtime.py
@@ -164,11 +164,11 @@ jobs:
           node --check dist/src/flight-desk190.js
           node --test dist/tests/interface191.test.js dist/tests/flight-desk190.test.js dist/tests/ground-render189.test.js
           # Operations 192: source-matched ILS, live weather, performance and flight analysis.
-          curl --fail --location --retry 3 --output source192.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/b09bf5330777fd938e64ed8f73a666eeb70dae12/patches/release192/source192.b64
+          curl --fail --location --retry 3 --retry-all-errors --output source192.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/b09bf5330777fd938e64ed8f73a666eeb70dae12/patches/release192/source192.b64
           echo "0282422c5b9e2d9555cee55922be0e38c58d8b60093a47fc35221c06b2d17e17  source192.b64" | sha256sum --check
-          curl --fail --location --retry 3 --output apply-operations192.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/b09bf5330777fd938e64ed8f73a666eeb70dae12/patches/release192/apply-operations192.py
+          curl --fail --location --retry 3 --retry-all-errors --output apply-operations192.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/b09bf5330777fd938e64ed8f73a666eeb70dae12/patches/release192/apply-operations192.py
           echo "b885eb341057e85cc024a5303554456f3869758ce58759d5d9211ee70133a58a  apply-operations192.py" | sha256sum --check
-          curl --fail --location --retry 3 --output earth_nav192.dat https://raw.githubusercontent.com/ptsmonteiro/x-plane-navdata/master/earth_nav.dat
+          curl --fail --location --retry 3 --retry-all-errors --output earth_nav192.dat https://raw.githubusercontent.com/ptsmonteiro/x-plane-navdata/master/earth_nav.dat
           echo "1968bbe7bc24a189f15a6df2bfdff4b3502856bc8487f025b86c6cbfd81b0fae  earth_nav192.dat" | sha256sum --check
           python3 apply-operations192.py
           python3 scripts/version-runtime.py
@@ -177,9 +177,9 @@ jobs:
           node --check dist/src/cockpit.js
           node --test dist/tests/operations192.test.js dist/tests/interface191.test.js dist/tests/flight-desk190.test.js dist/tests/ground-render189.test.js
           # Systems 193: optional energy / cabin systems and advisory approach monitoring.
-          curl --fail --location --retry 3 --output source193.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/f99a87507f9f2512435ce1eb86f9c52a87d388af/patches/release193/source193.b64
+          curl --fail --location --retry 3 --retry-all-errors --output source193.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/f99a87507f9f2512435ce1eb86f9c52a87d388af/patches/release193/source193.b64
           echo "b995aafeb600d22137abefcd20aba01d6b69e25c0e0f4af63b763784b747cad9  source193.b64" | sha256sum --check
-          curl --fail --location --retry 3 --output apply-systems193.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/f99a87507f9f2512435ce1eb86f9c52a87d388af/patches/release193/apply-systems193.py
+          curl --fail --location --retry 3 --retry-all-errors --output apply-systems193.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/f99a87507f9f2512435ce1eb86f9c52a87d388af/patches/release193/apply-systems193.py
           echo "3cd315869a39114e99647e79dea060d6531ce59095b61ffb8c8a7c42758865e6  apply-systems193.py" | sha256sum --check
           python3 apply-systems193.py
           python3 scripts/version-runtime.py
@@ -188,9 +188,9 @@ jobs:
           node --check dist/src/cockpit.js
           (cd dist && node --test tests/aircraft-systems193.test.js tests/operations192.test.js tests/flight-desk190.test.js tests/interface191.test.js tests/alerts158.test.js tests/hud-fixes126.test.js tests/ground-render189.test.js)
           # Airport detail 194: shared terminal finishes, boarding-bridge and apron equipment.
-          curl --fail --location --retry 3 --output source194.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/26b366347a11398812f31f76388b6cee4bb182b9/patches/release194/source194.b64
+          curl --fail --location --retry 3 --retry-all-errors --output source194.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/26b366347a11398812f31f76388b6cee4bb182b9/patches/release194/source194.b64
           echo "6eff7be360d6baca8359fc36dc68de8636c4962679353f577129d6d20a197631  source194.b64" | sha256sum --check
-          curl --fail --location --retry 3 --output apply-airport194.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/26b366347a11398812f31f76388b6cee4bb182b9/patches/release194/apply-airport194.py
+          curl --fail --location --retry 3 --retry-all-errors --output apply-airport194.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/26b366347a11398812f31f76388b6cee4bb182b9/patches/release194/apply-airport194.py
           echo "ef9a09a79c34473a27aea732d754cfdeeeb5a72da3e6ffedf7bbc90ec83a077b  apply-airport194.py" | sha256sum --check
           python3 apply-airport194.py
           python3 scripts/version-runtime.py
@@ -199,21 +199,21 @@ jobs:
           node --check dist/src/runway-equipment174.js
           (cd dist && node --test tests/airport-detail194.test.js tests/aircraft-systems193.test.js tests/operations192.test.js tests/interface191.test.js tests/flight-desk190.test.js tests/ground-render189.test.js)
           # Original open terminals 195: upstream geometry, textures and source placements.
-          curl --fail --location --retry 3 --output source195.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/062e4f74952eba8e48bbf9a73d6581452dbfb3ca/patches/release195/source195.b64
+          curl --fail --location --retry 3 --retry-all-errors --output source195.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/062e4f74952eba8e48bbf9a73d6581452dbfb3ca/patches/release195/source195.b64
           echo "7d821771de8b529aadb7f2d3595b75f2fda550d137bb0af5079ba697f9e3f208  source195.b64" | sha256sum --check
-          curl --fail --location --retry 3 --output apply-open-terminals195.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/062e4f74952eba8e48bbf9a73d6581452dbfb3ca/patches/release195/apply-open-terminals195.py
+          curl --fail --location --retry 3 --retry-all-errors --output apply-open-terminals195.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/062e4f74952eba8e48bbf9a73d6581452dbfb3ca/patches/release195/apply-open-terminals195.py
           echo "3f9420cfe046fd07e623cb47d24eb4618cb86c3fbb5d5fbd786b67ab5bdcb26e  apply-open-terminals195.py" | sha256sum --check
-          curl --fail --location --retry 3 --output omdb-open195.tar.gz https://codeload.github.com/mherweg/OMDB-fg-CustomScenery/tar.gz/7947ca6e4eafe90a1780613ebd2615882e17b03a
+          curl --fail --location --retry 3 --retry-all-errors --output omdb-open195.tar.gz https://codeload.github.com/mherweg/OMDB-fg-CustomScenery/tar.gz/7947ca6e4eafe90a1780613ebd2615882e17b03a
           echo "23e5d42d8120e740697adde510e9bbdcc9ca62c22ebc8fb75b75518fab1739ab  omdb-open195.tar.gz" | sha256sum --check
           python3 -m pip install --disable-pip-version-check numpy==2.2.6
           python3 apply-open-terminals195.py
           (cd dist && node --test tests/airport-detail194.test.js tests/aircraft-systems193.test.js tests/operations192.test.js tests/interface191.test.js tests/flight-desk190.test.js tests/ground-render189.test.js)
           # Original terminal 196: FGBR meshes, original bridges and authored night material sheets.
-          curl --fail --location --retry 3 --output source196.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/c676f1436cc3f0d454c60b589d2d0b42d5210362/patches/release196/source196.b64
+          curl --fail --location --retry 3 --retry-all-errors --output source196.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/c676f1436cc3f0d454c60b589d2d0b42d5210362/patches/release196/source196.b64
           echo "490926d9ca6251b20ea474ae23ffa69148cc01afc4e264cf7953680e9785f79e  source196.b64" | sha256sum --check
-          curl --fail --location --retry 3 --output apply-open-terminal196.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/c676f1436cc3f0d454c60b589d2d0b42d5210362/patches/release196/apply-open-terminal196.py
+          curl --fail --location --retry 3 --retry-all-errors --output apply-open-terminal196.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/c676f1436cc3f0d454c60b589d2d0b42d5210362/patches/release196/apply-open-terminal196.py
           echo "eaf4abfcce51648c3f2ed4b3f9c0016820537660aed4bc7507170ca9832f63c2  apply-open-terminal196.py" | sha256sum --check
-          curl --fail --location --retry 3 --output sbgr-open196.tar.gz https://codeload.github.com/FGMEMBERS-SCENERY/SBGR-fg-CustomScenery/tar.gz/a678a0d1c3f5f1fb084bd36aee570efde17075c0
+          curl --fail --location --retry 3 --retry-all-errors --output sbgr-open196.tar.gz https://codeload.github.com/FGMEMBERS-SCENERY/SBGR-fg-CustomScenery/tar.gz/a678a0d1c3f5f1fb084bd36aee570efde17075c0
           echo "01e1a590d2523236bef600da003d38f749af9d0975d48d8e29409cd1aa85ffd1  sbgr-open196.tar.gz" | sha256sum --check
           python3 apply-open-terminal196.py
           (cd dist && node --test tests/source-terminal-overlays196.test.js tests/airport-detail194.test.js tests/aircraft-systems193.test.js tests/operations192.test.js tests/interface191.test.js tests/flight-desk190.test.js tests/ground-render189.test.js)
