@@ -217,6 +217,13 @@ jobs:
           echo "01e1a590d2523236bef600da003d38f749af9d0975d48d8e29409cd1aa85ffd1  sbgr-open196.tar.gz" | sha256sum --check
           python3 apply-open-terminal196.py
           (cd dist && node --test tests/source-terminal-overlays196.test.js tests/airport-detail194.test.js tests/aircraft-systems193.test.js tests/operations192.test.js tests/interface191.test.js tests/flight-desk190.test.js tests/ground-render189.test.js)
+          # Major-city source scenery coverage197: preserve unmodelled concourse gaps.
+          curl --fail --location --retry 3 --retry-all-errors --output source197.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/85cb7bce01fd62141563a70442a47ae62a19b819/patches/release197/source197.b64
+          echo "d849b87aa812607018b3380c0451f661e7d9711bf707c260b6b0036c09248010  source197.b64" | sha256sum --check
+          curl --fail --location --retry 3 --retry-all-errors --output apply-source-coverage197.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/85cb7bce01fd62141563a70442a47ae62a19b819/patches/release197/apply-source-coverage197.py
+          echo "3f1c4ca88078b76201e4477f78b64de581dc4d26ef40bf8a12778fe3c68b401a  apply-source-coverage197.py" | sha256sum --check
+          python3 apply-source-coverage197.py
+          (cd dist && node --test tests/source-terminal-coverage197.test.js tests/source-terminal-overlays196.test.js tests/airport-detail194.test.js tests/aircraft-systems193.test.js tests/operations192.test.js tests/interface191.test.js tests/flight-desk190.test.js tests/ground-render189.test.js)
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
