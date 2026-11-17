@@ -224,6 +224,13 @@ jobs:
           echo "3f1c4ca88078b76201e4477f78b64de581dc4d26ef40bf8a12778fe3c68b401a  apply-source-coverage197.py" | sha256sum --check
           python3 apply-source-coverage197.py
           (cd dist && node --test tests/source-terminal-coverage197.test.js tests/source-terminal-overlays196.test.js tests/airport-detail194.test.js tests/aircraft-systems193.test.js tests/operations192.test.js tests/interface191.test.js tests/flight-desk190.test.js tests/ground-render189.test.js)
+          # Major-city original airport assets198: original Shanghai Pudong terminal models.
+          curl --fail --location --retry 3 --retry-all-errors --output source198.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/99d28a2c1006e8a7afbf952b6b996f5ff2fe0100/patches/release198/source198.b64
+          echo "d6be8e93ccd24a4d7e2df84691fe1a477fbe7b756bf679523ac336d958006f88  source198.b64" | sha256sum --check
+          curl --fail --location --retry 3 --retry-all-errors --output apply-open-pudong198.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/99d28a2c1006e8a7afbf952b6b996f5ff2fe0100/patches/release198/apply-open-pudong198.py
+          echo "c742f6d41d7cd2814b74263ba5edd618609f285255aea72cc01b69e1995304f7  apply-open-pudong198.py" | sha256sum --check
+          python3 apply-open-pudong198.py
+          (cd dist && node --test tests/source-terminal-coverage197.test.js tests/source-terminal-overlays196.test.js tests/airport-detail194.test.js tests/aircraft-systems193.test.js tests/operations192.test.js tests/interface191.test.js tests/flight-desk190.test.js tests/ground-render189.test.js)
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
