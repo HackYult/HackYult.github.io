@@ -1,0 +1,35 @@
+name: Refresh public aviation weather
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7,27,47 * * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/weather192.yml'
+permissions:
+  contents: write
+concurrency:
+  group: public-weather-cache192
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Build public METAR and TAF snapshot
+        run: |
+          curl --fail --location --retry 3 --output source192.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/b09bf5330777fd938e64ed8f73a666eeb70dae12/patches/release192/source192.b64
+          echo "0282422c5b9e2d9555cee55922be0e38c58d8b60093a47fc35221c06b2d17e17  source192.b64" | sha256sum --check
+          python3 - <<'PY192'
+          import json,gzip,base64
+          from pathlib import Path
+          b=json.loads(gzip.decompress(base64.b64decode(Path('source192.b64').read_text())))
+          for name in ['scripts/weather-cache192.py','scripts/publish-weather192.py','data/weather-airports192.json']:
+           p=Path(name);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(b['files'][name])
+          PY192
+          python3 scripts/weather-cache192.py --airports data/weather-airports192.json --output live-weather192/latest.json
+      - name: Publish timestamped public observation cache
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/publish-weather192.py
