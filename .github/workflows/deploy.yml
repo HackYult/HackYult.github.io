@@ -187,6 +187,17 @@ jobs:
           node --check dist/src/flight-desk190.js
           node --check dist/src/cockpit.js
           (cd dist && node --test tests/aircraft-systems193.test.js tests/operations192.test.js tests/flight-desk190.test.js tests/interface191.test.js tests/alerts158.test.js tests/hud-fixes126.test.js tests/ground-render189.test.js)
+          # Airport detail 194: shared terminal finishes, boarding-bridge and apron equipment.
+          curl --fail --location --retry 3 --output source194.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/26b366347a11398812f31f76388b6cee4bb182b9/patches/release194/source194.b64
+          echo "6eff7be360d6baca8359fc36dc68de8636c4962679353f577129d6d20a197631  source194.b64" | sha256sum --check
+          curl --fail --location --retry 3 --output apply-airport194.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/26b366347a11398812f31f76388b6cee4bb182b9/patches/release194/apply-airport194.py
+          echo "ef9a09a79c34473a27aea732d754cfdeeeb5a72da3e6ffedf7bbc90ec83a077b  apply-airport194.py" | sha256sum --check
+          python3 apply-airport194.py
+          python3 scripts/version-runtime.py
+          node --check dist/src/airport-facilities.js
+          node --check dist/src/terminal-architecture121.js
+          node --check dist/src/runway-equipment174.js
+          (cd dist && node --test tests/airport-detail194.test.js tests/aircraft-systems193.test.js tests/operations192.test.js tests/interface191.test.js tests/flight-desk190.test.js tests/ground-render189.test.js)
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
