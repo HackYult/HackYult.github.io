@@ -198,6 +198,16 @@ jobs:
           node --check dist/src/terminal-architecture121.js
           node --check dist/src/runway-equipment174.js
           (cd dist && node --test tests/airport-detail194.test.js tests/aircraft-systems193.test.js tests/operations192.test.js tests/interface191.test.js tests/flight-desk190.test.js tests/ground-render189.test.js)
+          # Original open terminals 195: upstream geometry, textures and source placements.
+          curl --fail --location --retry 3 --output source195.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/062e4f74952eba8e48bbf9a73d6581452dbfb3ca/patches/release195/source195.b64
+          echo "7d821771de8b529aadb7f2d3595b75f2fda550d137bb0af5079ba697f9e3f208  source195.b64" | sha256sum --check
+          curl --fail --location --retry 3 --output apply-open-terminals195.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/062e4f74952eba8e48bbf9a73d6581452dbfb3ca/patches/release195/apply-open-terminals195.py
+          echo "3f9420cfe046fd07e623cb47d24eb4618cb86c3fbb5d5fbd786b67ab5bdcb26e  apply-open-terminals195.py" | sha256sum --check
+          curl --fail --location --retry 3 --output omdb-open195.tar.gz https://codeload.github.com/mherweg/OMDB-fg-CustomScenery/tar.gz/7947ca6e4eafe90a1780613ebd2615882e17b03a
+          echo "23e5d42d8120e740697adde510e9bbdcc9ca62c22ebc8fb75b75518fab1739ab  omdb-open195.tar.gz" | sha256sum --check
+          python3 -m pip install --disable-pip-version-check numpy==2.2.6
+          python3 apply-open-terminals195.py
+          (cd dist && node --test tests/airport-detail194.test.js tests/aircraft-systems193.test.js tests/operations192.test.js tests/interface191.test.js tests/flight-desk190.test.js tests/ground-render189.test.js)
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
