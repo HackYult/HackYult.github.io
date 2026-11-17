@@ -11,7 +11,7 @@ permissions:
   id-token: write
 concurrency:
   group: github-pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -209,8 +209,8 @@ jobs:
           python3 apply-open-terminals195.py
           (cd dist && node --test tests/airport-detail194.test.js tests/aircraft-systems193.test.js tests/operations192.test.js tests/interface191.test.js tests/flight-desk190.test.js tests/ground-render189.test.js)
           # Original terminal 196: FGBR meshes, original bridges and authored night material sheets.
-          curl --fail --location --retry 3 --retry-all-errors --output source196.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/c676f1436cc3f0d454c60b589d2d0b42d5210362/patches/release196/source196.b64
-          echo "490926d9ca6251b20ea474ae23ffa69148cc01afc4e264cf7953680e9785f79e  source196.b64" | sha256sum --check
+          curl --fail --location --retry 3 --retry-all-errors --output source196.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/d9ed818f14ee817fa7e6f1a709b7e3fe210bb086/patches/release196/source196b.b64
+          echo "6994dbd12be1b6cf1272d17bccf87d09aa42427d55d9e8774b83c25b8c3eda07  source196.b64" | sha256sum --check
           curl --fail --location --retry 3 --retry-all-errors --output apply-open-terminal196.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/c676f1436cc3f0d454c60b589d2d0b42d5210362/patches/release196/apply-open-terminal196.py
           echo "eaf4abfcce51648c3f2ed4b3f9c0016820537660aed4bc7507170ca9832f63c2  apply-open-terminal196.py" | sha256sum --check
           curl --fail --location --retry 3 --retry-all-errors --output sbgr-open196.tar.gz https://codeload.github.com/FGMEMBERS-SCENERY/SBGR-fg-CustomScenery/tar.gz/a678a0d1c3f5f1fb084bd36aee570efde17075c0
