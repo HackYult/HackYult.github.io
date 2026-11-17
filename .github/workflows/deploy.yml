@@ -176,6 +176,17 @@ jobs:
           node --check dist/src/flight-desk190.js
           node --check dist/src/cockpit.js
           node --test dist/tests/operations192.test.js dist/tests/interface191.test.js dist/tests/flight-desk190.test.js dist/tests/ground-render189.test.js
+          # Systems 193: optional energy / cabin systems and advisory approach monitoring.
+          curl --fail --location --retry 3 --output source193.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/f99a87507f9f2512435ce1eb86f9c52a87d388af/patches/release193/source193.b64
+          echo "b995aafeb600d22137abefcd20aba01d6b69e25c0e0f4af63b763784b747cad9  source193.b64" | sha256sum --check
+          curl --fail --location --retry 3 --output apply-systems193.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/f99a87507f9f2512435ce1eb86f9c52a87d388af/patches/release193/apply-systems193.py
+          echo "3cd315869a39114e99647e79dea060d6531ce59095b61ffb8c8a7c42758865e6  apply-systems193.py" | sha256sum --check
+          python3 apply-systems193.py
+          python3 scripts/version-runtime.py
+          node --check dist/src/systems.js
+          node --check dist/src/flight-desk190.js
+          node --check dist/src/cockpit.js
+          (cd dist && node --test tests/aircraft-systems193.test.js tests/operations192.test.js tests/flight-desk190.test.js tests/interface191.test.js tests/alerts158.test.js tests/hud-fixes126.test.js tests/ground-render189.test.js)
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
