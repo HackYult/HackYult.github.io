@@ -182,8 +182,24 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+      - name: Wait for uploaded game metadata
+        run: |
+          python3 - <<'PYREADY'
+          import os,time,json,urllib.request,urllib.error
+          url='https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/actions/runs/'+os.environ['GITHUB_RUN_ID']+'/artifacts?per_page=100'
+          time.sleep(10)
+          for attempt in range(18):
+           try:
+            req=urllib.request.Request(url+'&ready='+str(int(time.time())),headers={'User-Agent':'aeronaut-pages-readiness','Accept':'application/vnd.github+json','Cache-Control':'no-cache'})
+            with urllib.request.urlopen(req,timeout=20)as r:data=json.load(r)
+            if any(a['name']=='github-pages' and not a['expired'] for a in data['artifacts']):
+             print('Uploaded game artifact is visible to the deployment API');break
+           except (urllib.error.URLError,ValueError) as e:print('Waiting for artifact metadata:',type(e).__name__)
+           time.sleep(5)
+          else:raise RuntimeError('Uploaded game metadata did not become available')
+          PYREADY
       - name: Publish game
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          timeout: 1800000
+          timeout: 600000
