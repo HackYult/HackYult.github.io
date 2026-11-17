@@ -163,6 +163,19 @@ jobs:
           node --check dist/src/app.js
           node --check dist/src/flight-desk190.js
           node --test dist/tests/interface191.test.js dist/tests/flight-desk190.test.js dist/tests/ground-render189.test.js
+          # Operations 192: source-matched ILS, live weather, performance and flight analysis.
+          curl --fail --location --retry 3 --output source192.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/b09bf5330777fd938e64ed8f73a666eeb70dae12/patches/release192/source192.b64
+          echo "0282422c5b9e2d9555cee55922be0e38c58d8b60093a47fc35221c06b2d17e17  source192.b64" | sha256sum --check
+          curl --fail --location --retry 3 --output apply-operations192.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/b09bf5330777fd938e64ed8f73a666eeb70dae12/patches/release192/apply-operations192.py
+          echo "b885eb341057e85cc024a5303554456f3869758ce58759d5d9211ee70133a58a  apply-operations192.py" | sha256sum --check
+          curl --fail --location --retry 3 --output earth_nav192.dat https://raw.githubusercontent.com/ptsmonteiro/x-plane-navdata/master/earth_nav.dat
+          echo "1968bbe7bc24a189f15a6df2bfdff4b3502856bc8487f025b86c6cbfd81b0fae  earth_nav192.dat" | sha256sum --check
+          python3 apply-operations192.py
+          python3 scripts/version-runtime.py
+          node --check dist/src/app.js
+          node --check dist/src/flight-desk190.js
+          node --check dist/src/cockpit.js
+          node --test dist/tests/operations192.test.js dist/tests/interface191.test.js dist/tests/flight-desk190.test.js dist/tests/ground-render189.test.js
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
