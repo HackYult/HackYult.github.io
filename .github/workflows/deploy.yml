@@ -237,6 +237,11 @@ jobs:
           curl --fail --location --retry 3 --retry-all-errors --output apply-major-airports199.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/32f3af23f266d37b28e94f32aabf65f9074b787c/patches/release199/apply-major-airports199.py
           echo "ee178ac05856768a347c79f50604470eff688048041a60e85f9445c6c24eac2a  apply-major-airports199.py" | sha256sum --check
           python3 apply-major-airports199.py
+          curl --fail --location --retry 3 --retry-all-errors --output source200.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/e6f92d3554f05de657d48a5ebde22d953bc050d4/patches/release200/source200.b64
+          echo "2f73ef9ec4ac5e87d459cc9d06a9a4ec8bf4bb8a07fb749bc7a928d9aff015ba  source200.b64" | sha256sum --check
+          curl --fail --location --retry 3 --retry-all-errors --output apply-airports200.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/e6f92d3554f05de657d48a5ebde22d953bc050d4/patches/release200/apply-airports200.py
+          echo "202829372d18d55d7f093d0d74b38dfebb8501667b6c1bf84bafdd37bdcef4ba  apply-airports200.py" | sha256sum --check
+          python3 apply-airports200.py
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
