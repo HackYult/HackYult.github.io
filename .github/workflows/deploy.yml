@@ -231,6 +231,12 @@ jobs:
           echo "c742f6d41d7cd2814b74263ba5edd618609f285255aea72cc01b69e1995304f7  apply-open-pudong198.py" | sha256sum --check
           python3 apply-open-pudong198.py
           (cd dist && node --test tests/source-terminal-coverage197.test.js tests/source-terminal-overlays196.test.js tests/airport-detail194.test.js tests/aircraft-systems193.test.js tests/operations192.test.js tests/interface191.test.js tests/flight-desk190.test.js tests/ground-render189.test.js)
+          # Original major airport models and terminal lighting.
+          curl --fail --location --retry 3 --retry-all-errors --output source199.b64 https://raw.githubusercontent.com/HackYult/HackYult.github.io/32f3af23f266d37b28e94f32aabf65f9074b787c/patches/release199/source199.b64
+          echo "51a63abe8d598ff71fecd35d395ebcdbe461a71cebe0723721158c3f6b17e812  source199.b64" | sha256sum --check
+          curl --fail --location --retry 3 --retry-all-errors --output apply-major-airports199.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/32f3af23f266d37b28e94f32aabf65f9074b787c/patches/release199/apply-major-airports199.py
+          echo "ee178ac05856768a347c79f50604470eff688048041a60e85f9445c6c24eac2a  apply-major-airports199.py" | sha256sum --check
+          python3 apply-major-airports199.py
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
