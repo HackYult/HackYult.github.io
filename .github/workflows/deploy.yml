@@ -245,6 +245,9 @@ jobs:
           curl --fail --location --retry 3 --retry-all-errors --output apply-alternates201.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/61d96902009e44fe3878c391ff8c8a4ca147eaf0/patches/release201/apply-alternates201.py
           echo "8c966ca8e76f8b1ce29f7a92e0597fa25dcfd66f3e3fd0929aa660062c04f23b  apply-alternates201.py" | sha256sum --check
           python3 apply-alternates201.py
+          curl --fail --location --retry 3 --retry-all-errors --output apply-airframe202.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/11d11c4c8f13fd6e5c81362a333d46015a72302a/patches/release202/apply-airframe202.py
+          echo "1a20af83f945084150009bd9c88793186b1c690a6a91a02ab205fdaa6239bc0e  apply-airframe202.py" | sha256sum --check
+          python3 apply-airframe202.py
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
