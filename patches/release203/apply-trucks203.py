@@ -1,0 +1,46 @@
+"""Install weight-dependent landing gear on the release 202 Pages build."""
+import hashlib
+import json
+from pathlib import Path
+import re
+import subprocess
+import sys
+import zipfile
+
+dist = Path('dist')
+manifest_path = dist / 'data/render-release.json'
+manifest = json.loads(manifest_path.read_text())
+assert manifest['version'] == 202
+import gzip, base64
+files = json.loads(gzip.decompress(base64.b64decode('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')))
+outputs = {}
+for name, (expected, edits) in files.items():
+    path = dist / name
+    if expected:
+        baseline = re.sub(r'(?<=\.js)\?v=[0-9.]+', '', path.read_text())
+        assert hashlib.sha256(baseline.encode()).hexdigest() == expected, name
+        lines = baseline.splitlines(True)
+        for start, end, replacement in reversed(edits):
+            lines[start:end] = [replacement]
+        outputs[name] = ''.join(lines)
+    else:
+        outputs[name] = edits
+for name, text in outputs.items():
+    (dist / name).write_text(text)
+manifest.update(version=203, landingGearRevision=203)
+release = json.dumps(manifest) + '\n'
+manifest_path.write_text(release)
+Path('data/render-release.json').write_text(release)
+subprocess.run([sys.executable, 'scripts/version-runtime.py'], check=True)
+subprocess.run(['node','--test','tests/dreamliner-trucks203.test.mjs','tests/airframe-approach202.test.mjs'], cwd=dist, check=True)
+changed = [*(dist / name for name in files), manifest_path]
+names = {str(p.relative_to(dist)) for p in changed}
+source = dist/'sources/game-source.zip'
+tmp = source.with_suffix('.203.zip')
+with zipfile.ZipFile(source) as old, zipfile.ZipFile(tmp,'w',compression=zipfile.ZIP_DEFLATED) as new:
+    for item in old.infolist():
+        if item.filename not in names:
+            new.writestr(item, old.read(item.filename))
+    for path in changed:
+        new.write(path, str(path.relative_to(dist)))
+tmp.replace(source)
