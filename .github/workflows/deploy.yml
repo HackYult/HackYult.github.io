@@ -254,6 +254,9 @@ jobs:
           curl --fail --location --retry 3 --retry-all-errors --output apply-struts204.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/6ce92afb16bc0633c47eaed9a5389a10f7dd2e0f/patches/release204/apply-struts204.py
           echo "c2d4c8948c1f14c8a2527162ad9b8b501c1ea21e1140cc082662faa620728d48  apply-struts204.py" | sha256sum --check
           python3 apply-struts204.py
+          curl --fail --location --retry 3 --retry-all-errors --output apply-gear-view205.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/0aef31bcfb38c73b70f45bfa86de8394e542aa24/patches/release205/apply-gear-view205.py
+          echo "46e09eb91f3e7d36b90d78cc978b99c261fa56546048d53f2f9440bdfbe315b2  apply-gear-view205.py" | sha256sum --check
+          python3 apply-gear-view205.py
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
