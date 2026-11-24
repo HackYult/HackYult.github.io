@@ -263,6 +263,9 @@ jobs:
           curl --fail --location --retry 3 --retry-all-errors --output apply-controls207.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/c4c9c3102d060b879a89647a2fc799dcf81e9993/patches/release207/apply-controls207.py
           echo "5360adb6781b2e1218f4f8f46254e31e8388fdbd20e1f6cd25168986c3f63f1d  apply-controls207.py" | sha256sum --check
           python3 apply-controls207.py
+          curl --fail --location --retry 3 --retry-all-errors --output apply-braking208.py https://raw.githubusercontent.com/HackYult/HackYult.github.io/1c9b9f994e31522cb51c1b33210dfe01cce6b68b/patches/release208/apply-braking208.py
+          echo "fee49e994931093aef1c563a4b2eaa5a7287e4fbeaaaf6bff8afabf7503983e7  apply-braking208.py" | sha256sum --check
+          python3 apply-braking208.py
           test -f dist/index.html
           touch dist/.nojekyll
       - name: Upload game
